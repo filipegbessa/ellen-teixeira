@@ -40,3 +40,19 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# bundle analyzer
+.next/analyze/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# PWA
+/public/sw.js
+/public/workbox-*.js
+/public/worker-*.js
+/public/fallback-*.js
