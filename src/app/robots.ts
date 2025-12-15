@@ -1,14 +1,15 @@
-import { MetadataRoute } from 'next'
+import { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://ellenteixeira.com.br'
+  const baseUrl =
+    process.env.NEXT_PUBLIC_SITE_URL || "https://draellenteixeira.com.br";
 
   return {
     rules: {
-      userAgent: '*',
-      allow: '/',
-      disallow: ['/api/', '/admin/'], // Adicione rotas privadas aqui
+      userAgent: "*",
+      allow: "/",
+      disallow: ["/api/", "/admin/"], // Adicione rotas privadas aqui
     },
     sitemap: `${baseUrl}/sitemap.xml`,
-  }
+  };
 }
