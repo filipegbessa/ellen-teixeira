@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Poppins, Fraunces } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import StructuredData from "@/components/StructuredData";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -13,16 +14,23 @@ const poppins = Poppins({
   variable: "--font-poppins",
 });
 
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "600", "700", "800", "900"],
+  display: "swap",
+  variable: "--font-fraunces",
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL || "https://draellenteixeira.com.br"
   ),
   title: {
-    default: "Ellen Teixeira - Odontologia",
+    default: "Dra. Ellen Teixeira - Odontologia",
     template: "%s | Ellen Teixeira",
   },
   description:
-    "Dra. Ellen Teixeira - Odontologia especializada em estética dental, implantes e ortodontia.",
+    "Dra. Ellen Teixeira - Especialista em prótese e implantodontia. Atendimento odontológico personalizado e humanizado no Centro do Rio de Janeiro.",
   keywords: [
     "odontologia",
     "dentista",
@@ -30,6 +38,9 @@ export const metadata: Metadata = {
     "estética dental",
     "implantes",
     "ortodontia",
+    "prótese dentária",
+    "implantodontia",
+    "Centro RJ",
   ],
   authors: [{ name: "Ellen Teixeira" }],
   creator: "Ellen Teixeira",
@@ -37,10 +48,10 @@ export const metadata: Metadata = {
     type: "website",
     locale: "pt_BR",
     url: "/",
-    title: "Ellen Teixeira - Odontologia",
+    title: "Dra. Ellen Teixeira - Odontologia",
     description:
-      "Odontologia especializada em estética dental, implantes e ortodontia.",
-    siteName: "Ellen Teixeira Odontologia",
+      "Especialista em prótese e implantodontia. Atendimento personalizado e humanizado no Centro do Rio de Janeiro.",
+    siteName: "Dra. Ellen Teixeira - Odontologia",
     images: [
       {
         url: "/images/og-image.jpg", // Adicione esta imagem depois
@@ -52,9 +63,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ellen Teixeira - Odontologia",
+    title: "Dra. Ellen Teixeira - Odontologia",
     description:
-      "Odontologia especializada em estética dental, implantes e ortodontia.",
+      "Especialista em prótese e implantodontia. Atendimento personalizado e humanizado.",
     images: ["/images/og-image.jpg"],
   },
   robots: {
@@ -81,7 +92,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={poppins.className}>
+      <head>
+        <StructuredData />
+      </head>
+      <body className={`${fraunces.variable} font-sans`}>
         <GoogleAnalytics />
         {children}
         <SpeedInsights />
