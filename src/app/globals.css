@@ -1,16 +1,24 @@
+/* Import DS styles first - @import must come before all other rules */
+@import 'star-flicks-ds/styles/tokens.css';
+@import 'star-flicks-ds/styles/fontIcons.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Import DS styles first */
-@import 'star-flicks-ds/styles/tokens.css';
-@import 'star-flicks-ds/styles/fontIcons.css';
-
 /* Override DS variables with project-specific values */
-:root {
-  --background: #575D4B;
-  --background-body: #eeeeee;
-  --foreground: #171717;
+@layer base {
+  :root {
+    --primary: 69, 43, 158 !important;
+    --primary-light: 227, 224, 255 !important;
+    --secondary: 77, 47, 179 !important;
+    --secondary-light: 201, 241, 255 !important;
+    --background: #575D4B;
+    --background-body: #ffffff;
+    --foreground: #171717;
+    --font-heading: var(--font-fraunces);
+    --font-body: var(--font-fraunces);
+  }
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -22,10 +30,42 @@
 } */
 
 body {
-  color: var(--foreground);
+  color: var(--secondary);
   background: var(--background-body);
+  font-family: var(--font-fraunces), serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-fraunces), serif;
 }
 
 .content-center {
   @apply mx-auto max-w-screen-lg;
+}
+
+/* Swiper Customization */
+.treatments-swiper {
+  padding-bottom: 3rem;
+}
+
+.treatments-swiper .swiper-pagination {
+  bottom: 0 !important;
+}
+
+.treatments-swiper .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: #9ca3af;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.treatments-swiper .swiper-pagination-bullet-active {
+  background: #1f2937;
+  width: 24px;
+  border-radius: 5px;
+}
+
+.treatments-swiper .swiper-pagination-bullet:hover {
+  background: #6b7280;
 }
