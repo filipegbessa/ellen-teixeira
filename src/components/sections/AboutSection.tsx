@@ -10,30 +10,32 @@ export default function AboutSection() {
           {businessInfo.professional.name}
         </h2>
 
-        <div className="grid grid-cols-[182px_305px_1fr] gap-5">
-          <div className="grid gap-2 grid-rows-2 text-white">
-            <div className="bg-secondary rounded-[20px] flex flex-col justify-center p-4 gap-3 aspect-square">
-              <p className="text-6xl font-black ">
-                {businessInfo.professional.experienceYears}
-              </p>
-              <p className="leading-tight font-light text-lg">
-                Anos de experiência
-              </p>
+        <div className="md:grid md:grid-cols-[487px_1fr] flex flex-col gap-5">
+          <div className="grid md:grid-cols-[182px_1fr] grid-cols-2 gap-2">
+            <div className="grid gap-2 grid-rows-2 text-white">
+              <div className="bg-secondary rounded-[20px] flex flex-col justify-center p-4 gap-3 md:aspect-square">
+                <p className="text-6xl font-black ">
+                  {businessInfo.professional.experienceYears}
+                </p>
+                <p className="leading-tight font-light text-lg">
+                  Anos de experiência
+                </p>
+              </div>
+              <div className="bg-secondary rounded-[20px]  flex flex-col justify-center p-4 gap-1 md:aspect-square">
+                <p className="font-semibold text-base">Formação:</p>
+                <p className=" text-sm">
+                  Odontologia pela
+                  <br />
+                  Universidade Federal
+                  <br />
+                  do Rio de Janeiro
+                </p>
+              </div>
             </div>
-            <div className="bg-secondary rounded-[20px]  flex flex-col justify-center p-4 gap-1 aspect-square">
-              <p className="font-semibold text-base">Formação:</p>
-              <p className=" text-sm">
-                Odontologia pela
-                <br />
-                Universidade Federal
-                <br />
-                do Rio de Janeiro
-              </p>
-            </div>
-          </div>
 
-          <div className="bg-[red] h-full rounded-[20px]">
-            <p className="">Foto da Dra. Ellen</p>
+            <div className="bg-[red] h-full rounded-[20px]">
+              <p className="">Foto da Dra. Ellen</p>
+            </div>
           </div>
 
           <div className="rounded-[20px] text-secondary">

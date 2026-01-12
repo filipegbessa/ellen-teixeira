@@ -14,11 +14,10 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const menuItems = [
-    // { label: "Início", href: "#inicio" },
-    // { label: "Sobre", href: "#sobre" },
+    { label: "Sobre", href: "#sobre" },
     { label: "Tratamentos", href: "#tratamentos" },
     { label: "Avaliações", href: "#avaliacoes" },
-    { label: "Localização", href: "#localizacao" },
+    { label: "Localização", href: "#localizacao", noMobile: true },
   ];
 
   const handleMenuClick = () => {
@@ -26,9 +25,10 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-white fixed top-4 left-1/2 -translate-x-1/2 z-50 border border-blue-600/10 shadow-[0_11px_34px_0_rgba(32,46,173,0.1)] rounded-[20px] h-[70px] max-w-[615px] w-full px-4">
-      <div className="px-3 py-[15px] h-full">
-        <div className="flex items-center justify-between gap-4">
+    // md:max-w-[615px] w-full px-4 max-w-95%]
+    <header className="min-w-[95%] md:max-w-[615px] md:min-w-min bg-white fixed top-4 left-1/2 -translate-x-1/2 z-50 border border-blue-600/10 shadow-[0_11px_34px_0_rgba(32,46,173,0.1)] rounded-3xl h-[70px]">
+      <div className="flex flex-col h-full">
+        <div className="flex items-center justify-between gap-4 flex-1 px-4">
           {/* Logo */}
           <div className="flex items-center">
             <div className="w-32 h-12 bg-gray-200 flex items-center justify-center rounded">
@@ -38,15 +38,19 @@ export default function Header() {
 
           {/* Menu */}
           <nav className="hidden md:flex items-center gap-4">
-            {menuItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="text-primary text-lg font-semibold no-underline transition-opacity duration-200 hover:opacity-70 inline-block"
-              >
-                {item.label}
-              </a>
-            ))}
+            {menuItems.map((item) => {
+              if (item.noMobile) return null;
+
+              return (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className="text-primary text-lg font-semibold no-underline transition-opacity duration-200 hover:opacity-70 inline-block"
+                >
+                  {item.label}
+                </a>
+              );
+            })}
           </nav>
 
           {/* Social Icons */}
@@ -71,7 +75,7 @@ export default function Header() {
             </a>
             <a
               href="#localizacao"
-              className="w-9 h-9 bg-gray-800 rounded-xl flex items-center justify-center hover:bg-gray-700 transition-colors"
+              className="w-9 h-9 bg-gray-800 rounded-xl hidden md:flex items-center justify-center hover:bg-gray-700 transition-colors"
               aria-label="Localização"
             >
               <FaMapMarkerAlt className="text-white text-xl" />
@@ -80,13 +84,13 @@ export default function Header() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors ml-2"
+              className="md:hidden w-9 h-9 bg-gray-800 rounded-xl flex items-center justify-center hover:bg-gray-700 transition-colors bg-primary"
               aria-label="Menu"
             >
               {mobileMenuOpen ? (
-                <FaTimes className="text-white text-xl" />
+                <FaTimes className="text-white text-lg" />
               ) : (
-                <FaBars className="text-white text-xl" />
+                <FaBars className="text-white text-lg" />
               )}
             </button>
           </div>
@@ -94,14 +98,14 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <nav className="md:hidden mt-4 pb-4 border-t border-gray-200 pt-4">
-            <div className="flex flex-col space-y-3">
+          <nav className="md:hidden p-4 rounded-3xl bg-white absolute top-[72px] w-full">
+            <div className="flex flex-col gap-3">
               {menuItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
                   onClick={handleMenuClick}
-                  className="text-primary text-xl font-semibold no-underline transition-opacity duration-200 hover:opacity-70 inline-block px-4 py-2 rounded"
+                  className="text-primary text-xl font-semibold no-underline transition-opacity duration-200 hover:opacity-70 inline-block"
                 >
                   {item.label}
                 </a>
