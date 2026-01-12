@@ -25,13 +25,12 @@ export default function Header() {
   };
 
   return (
-    // md:max-w-[615px] w-full px-4 max-w-95%]
-    <header className="min-w-[95%] md:max-w-[615px] md:min-w-min bg-white fixed top-4 left-1/2 -translate-x-1/2 z-50 border border-blue-600/10 shadow-[0_11px_34px_0_rgba(32,46,173,0.1)] rounded-3xl h-[70px]">
+    <header className="min-w-[95%] md:max-w-[615px] md:min-w-min bg-surface-elevated fixed top-4 left-1/2 -translate-x-1/2 z-50 border border-border shadow-header rounded-3xl h-[70px]">
       <div className="flex flex-col h-full">
         <div className="flex items-center justify-between gap-4 flex-1 px-4">
           {/* Logo */}
           <div className="flex items-center">
-            <div className="w-32 h-12 bg-gray-200 flex items-center justify-center rounded">
+            <div className="w-32 h-12 bg-surface-muted flex items-center justify-center rounded">
               <span className="font-bold">LOGO</span>
             </div>
           </div>
@@ -59,38 +58,38 @@ export default function Header() {
               href={contactConfig.phone.whatsappUrl()}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-9 h-9 bg-green-500 rounded-xl flex items-center justify-center hover:bg-green-600 transition-colors"
+              className="w-9 h-9 bg-accent rounded-xl flex items-center justify-center hover:bg-accent/90 transition-colors"
               aria-label="WhatsApp"
             >
-              <FaWhatsapp className="text-white text-xl" />
+              <FaWhatsapp className="text-on-dark text-xl" />
             </a>
             <a
               href={contactConfig.social.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-9 h-9 bg-gradient-to-tr from-purple-600 via-pink-600 to-orange-500 rounded-xl flex items-center justify-center hover:opacity-90 transition-opacity"
+              className="w-9 h-9 bg-gradient-to-tr from-instagram-from via-instagram-via to-instagram-to rounded-xl flex items-center justify-center hover:opacity-90 transition-opacity"
               aria-label="Instagram"
             >
-              <FaInstagram className="text-white text-xl" />
+              <FaInstagram className="text-on-dark text-xl" />
             </a>
             <a
               href="#localizacao"
-              className="w-9 h-9 bg-gray-800 rounded-xl hidden md:flex items-center justify-center hover:bg-gray-700 transition-colors"
+              className="w-9 h-9 bg-location rounded-xl hidden md:flex items-center justify-center hover:bg-location-hover transition-colors"
               aria-label="Localização"
             >
-              <FaMapMarkerAlt className="text-white text-xl" />
+              <FaMapMarkerAlt className="text-on-dark text-xl" />
             </a>
 
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden w-9 h-9 bg-gray-800 rounded-xl flex items-center justify-center hover:bg-gray-700 transition-colors bg-primary"
+              className="md:hidden w-9 h-9 bg-primary rounded-xl flex items-center justify-center hover:opacity-90 transition-opacity"
               aria-label="Menu"
             >
               {mobileMenuOpen ? (
-                <FaTimes className="text-white text-lg" />
+                <FaTimes className="text-on-dark text-lg" />
               ) : (
-                <FaBars className="text-white text-lg" />
+                <FaBars className="text-on-dark text-lg" />
               )}
             </button>
           </div>
@@ -98,7 +97,7 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <nav className="md:hidden p-4 rounded-3xl bg-white absolute top-[72px] w-full">
+          <nav className="md:hidden p-4 rounded-3xl bg-surface-elevated absolute top-[72px] w-full shadow-header">
             <div className="flex flex-col gap-3">
               {menuItems.map((item) => (
                 <a

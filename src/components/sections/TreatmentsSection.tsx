@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
@@ -15,6 +15,19 @@ import { getTreatments } from "@/utils/Helper";
 export default function TreatmentsSection() {
   const treatments = getTreatments();
   const swiperRef = useRef<SwiperType>();
+  const [isBeginning, setIsBeginning] = useState(true);
+  const [isEnd, setIsEnd] = useState(false);
+
+  const updateNavigationState = (swiper: SwiperType) => {
+    // Se loop está ativado, os botões nunca ficam desabilitados
+    if (swiper.params.loop) {
+      setIsBeginning(false);
+      setIsEnd(false);
+    } else {
+      setIsBeginning(swiper.isBeginning);
+      setIsEnd(swiper.isEnd);
+    }
+  };
 
   return (
     <section id="tratamentos" className="py-16 md:py-24">
@@ -40,13 +53,18 @@ export default function TreatmentsSection() {
             <Swiper
               onSwiper={(swiper) => {
                 swiperRef.current = swiper;
+                updateNavigationState(swiper);
+              }}
+              onSlideChange={(swiper) => {
+                updateNavigationState(swiper);
               }}
               modules={[Navigation, Pagination]}
               spaceBetween={24}
-              // pagination={{
-              //   clickable: true,
-              //   dynamicBullets: true,
-              // }}
+              speed={400}
+              // loop={treatments.length > 4}
+              grabCursor={true}
+              watchSlidesProgress={true}
+              slidesPerGroup={1}
               breakpoints={{
                 // Mobile: 1 slide
                 320: {
@@ -73,7 +91,7 @@ export default function TreatmentsSection() {
             >
               {treatments.map((treatment) => (
                 <SwiperSlide key={treatment.id}>
-                  <div className="bg-secondary rounded-2xl h-72 flex flex-col items-center justify-center hover:bg-gray-300 transition-colors cursor-pointer p-6 text-white">
+                  <div className="bg-secondary rounded-2xl h-72 flex flex-col items-center justify-center hover:bg-card-hover transition-colors cursor-pointer p-6 text-on-dark">
                     <p className=" font-semibold text-xl mb-2">
                       {treatment.name}
                     </p>
@@ -89,7 +107,10 @@ export default function TreatmentsSection() {
             <div className="flex mt-2 gap-1">
               <button
                 onClick={() => swiperRef.current?.slidePrev()}
-                className="w-11 h-11 rounded-full flex items-center justify-center shadow-lg border border-primary"
+                disabled={isBeginning}
+                className={`w-11 h-11 rounded-full flex items-center justify-center shadow-lg border border-primary transition-opacity ${
+                  isBeginning ? "opacity-60 cursor-not-allowed" : "opacity-100"
+                }`}
                 aria-label="Tratamento anterior"
               >
                 <FaChevronLeft className="text-primary text-xl" />
@@ -97,7 +118,10 @@ export default function TreatmentsSection() {
 
               <button
                 onClick={() => swiperRef.current?.slideNext()}
-                className="w-11 h-11 rounded-full flex items-center justify-center shadow-lg border border-primary"
+                disabled={isEnd}
+                className={`w-11 h-11 rounded-full flex items-center justify-center shadow-lg border border-primary transition-opacity ${
+                  isEnd ? "opacity-60 cursor-not-allowed" : "opacity-100"
+                }`}
                 aria-label="Próximo tratamento"
               >
                 <FaChevronRight className="text-primary text-xl" />

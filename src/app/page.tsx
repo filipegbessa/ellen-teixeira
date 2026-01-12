@@ -26,7 +26,7 @@ export default function Home() {
                 element="h1"
                 size="2xl"
                 weight="medium"
-                className="text-white mb-1"
+                className="text-on-dark mb-1"
               >
                 Dra. Ellen Teixeira
               </SFTypography>
@@ -35,7 +35,7 @@ export default function Home() {
                 weight="light"
                 align="center"
                 size="sm"
-                className="text-white"
+                className="text-on-dark"
               >
                 Atendimento odontológico humanizado e com qualidade
               </SFTypography>
@@ -49,7 +49,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="block"
                 >
-                  <div className="bg-white rounded-full pt-0.5 pr-1.5 pb-1 pl-0.5">
+                  <div className="bg-surface-elevated rounded-full pt-0.5 pr-1.5 pb-1 pl-0.5">
                     <div className="bg-rose rounded-full h-16 flex items-center justify-center gap-2 transition-transform ">
                       <FaWhatsapp className="text-button-primary text-xl" />
 
@@ -70,7 +70,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="block"
                 >
-                  <div className="bg-white rounded-full pt-0.5 pr-1.5 pb-1 pl-0.5">
+                  <div className="bg-surface-elevated rounded-full pt-0.5 pr-1.5 pb-1 pl-0.5">
                     <div className="bg-rose rounded-full h-16 flex items-center justify-center gap-2 transition-transform ">
                       <FaInstagram className="text-button-primary text-xl" />
 
@@ -91,7 +91,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="block"
                 >
-                  <div className="bg-white rounded-full pt-0.5 pr-1.5 pb-1 pl-0.5">
+                  <div className="bg-surface-elevated rounded-full pt-0.5 pr-1.5 pb-1 pl-0.5">
                     <div className="bg-rose rounded-full h-16 flex items-center justify-center gap-2 transition-transform ">
                       <FaMapMarkedAlt className="text-button-primary text-xl" />
 
@@ -108,10 +108,10 @@ export default function Home() {
             </ul>
 
             <div className="mt-5 px-5">
-              <SFTypography className="text-white">
+              <SFTypography className="text-on-dark">
                 R. Sete de Setembro, 98 - Sala 609
               </SFTypography>
-              <SFTypography className="text-white">
+              <SFTypography className="text-on-dark">
                 Centro, Rio de Janeiro - RJ
               </SFTypography>
             </div>
@@ -122,7 +122,7 @@ export default function Home() {
               // element="footer"
               align="center"
               size="xs"
-              className="text-white mt-20 block"
+              className="text-on-dark mt-20 block"
             >
               © {new Date().getFullYear()} Dra. Ellen Teixeira. Todos os
               direitos reservados.

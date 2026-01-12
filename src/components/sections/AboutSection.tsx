@@ -4,7 +4,7 @@ import { businessInfo } from "@/data/business";
 
 export default function AboutSection() {
   return (
-    <section id="sobre" className="bg-gray-50 py-16 md:py-24">
+    <section id="sobre" className="bg-surface-section py-16 md:py-24">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl md:text-5xl font-bold text-primary mb-9">
           {businessInfo.professional.name}
@@ -12,7 +12,7 @@ export default function AboutSection() {
 
         <div className="md:grid md:grid-cols-[487px_1fr] flex flex-col gap-5">
           <div className="grid md:grid-cols-[182px_1fr] grid-cols-2 gap-2">
-            <div className="grid gap-2 grid-rows-2 text-white">
+            <div className="grid gap-2 grid-rows-2 text-on-dark">
               <div className="bg-secondary rounded-[20px] flex flex-col justify-center p-4 gap-3 md:aspect-square">
                 <p className="text-6xl font-black ">
                   {businessInfo.professional.experienceYears}
@@ -33,7 +33,7 @@ export default function AboutSection() {
               </div>
             </div>
 
-            <div className="bg-[red] h-full rounded-[20px]">
+            <div className="bg-placeholder h-full rounded-[20px]">
               <p className="">Foto da Dra. Ellen</p>
             </div>
           </div>

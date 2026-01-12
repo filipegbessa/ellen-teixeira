@@ -8,7 +8,7 @@ export default function HeroSection() {
   return (
     <section
       id="inicio"
-      className="bg-gradient-to-t from-primary-light to-[#c9f1ff] pt-28 pb-20 md:pt-32 md:pb-24 rounded-br-[40px] rounded-bl-[40px]"
+      className="bg-gradient-to-t from-primary-light to-secondary-light pt-28 pb-20 md:pt-32 md:pb-24 rounded-br-[40px] rounded-bl-[40px]"
     >
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -37,7 +37,7 @@ export default function HeroSection() {
               href={contactConfig.phone.whatsappUrl()}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center bg-green-500 text-white px-6 py-3 rounded-3xl font-semibold h-20 text-xl gap-1 transition-transform duration-200 hover:-translate-y-1 hover:shadow-lg"
+              className="inline-flex items-center bg-accent text-on-dark px-6 py-3 rounded-3xl font-semibold h-20 text-xl gap-1 transition-transform duration-200 hover:-translate-y-1 hover:shadow-lg hover:bg-accent/90"
               aria-label="Agendar avaliação pelo WhatsApp"
             >
               <FaWhatsapp className="text-3xl" />
@@ -48,7 +48,7 @@ export default function HeroSection() {
           {/* Right Image */}
           <div className="relative">
             {/* Placeholder for team image */}
-            <div className="relative w-full h-96 bg-gray-200 rounded-lg overflow-hidden">
+            <div className="relative w-full h-96 bg-surface-muted rounded-lg overflow-hidden">
               <div className="absolute inset-0 flex items-center justify-center">
                 <p className="text-center px-4">
                   Adicione imagem da equipe aqui

@@ -14,55 +14,84 @@ const config: Config = {
         sans: ["var(--font-fraunces)", "serif"],
       },
       colors: {
+        // Legacy variables (kept for compatibility)
         "background-body": "var(--background-body)",
         background: "var(--background)",
         foreground: "var(--foreground)",
 
-        // Star Flicks DS colors - Direct hex values for Turbopack compatibility
+        // Brand Colors
         primary: {
-          DEFAULT: "#452B9E",
-          light: "#E3E0FF",
-          hover: "rgb(var(--primary-hover) / <alpha-value>)",
-          active: "rgb(var(--primary-active) / <alpha-value>)",
-          contrast: "rgb(var(--primary-contrast) / <alpha-value>)",
+          DEFAULT: "rgb(var(--color-primary) / <alpha-value>)",
+          light: "rgb(var(--color-primary-light) / <alpha-value>)",
         },
         secondary: {
-          DEFAULT: "#362FB3",
-          light: "#C9F1FF",
-          hover: "rgb(var(--secondary-hover) / <alpha-value>)",
-          active: "rgb(var(--secondary-active) / <alpha-value>)",
-          contrast: "rgb(var(--secondary-contrast) / <alpha-value>)",
+          DEFAULT: "rgb(var(--color-secondary) / <alpha-value>)",
+          light: "rgb(var(--color-secondary-light) / <alpha-value>)",
         },
-        "contrast-primary": "rgb(var(--primary-contrast) / <alpha-value>)",
-        "contrast-secondary": "rgb(var(--secondary-contrast) / <alpha-value>)",
-        tertiary: "rgb(var(--tertiary) / <alpha-value>)",
-        "tertiary-hover": "rgb(var(--tertiary-hover) / <alpha-value>)",
-        "tertiary-active": "rgb(var(--tertiary-active) / <alpha-value>)",
-        "tertiary-contrast": "rgb(var(--tertiary-contrast) / <alpha-value>)",
-        "contrast-tertiary": "rgb(var(--tertiary-contrast) / <alpha-value>)",
-        quaternary: "rgb(var(--quaternary) / <alpha-value>)",
-        hover: "rgb(var(--hover) / <alpha-value>)",
-        click: "rgb(var(--click) / <alpha-value>)",
-        icon: "rgb(var(--icon) / <alpha-value>)",
-        outline: "rgb(var(--outline) / <alpha-value>)",
-        divider: "rgb(var(--divider) / <alpha-value>)",
-        "bg-light": "rgb(var(--bg-light) / <alpha-value>)",
-        "bg-dark": "rgb(var(--bg-dark) / <alpha-value>)",
-        "bg-disabled": "rgb(var(--bg-disabled) / <alpha-value>)",
-        disabled: "rgb(var(--bg-disabled) / <alpha-value>)",
-        "text-primary": "rgb(var(--primary) / <alpha-value>)",
-        "text-secondary": "rgb(var(--secondary) / <alpha-value>)",
-        "text-disabled": "rgb(var(--text-disabled) / <alpha-value>)",
-        success: "rgb(var(--success) / <alpha-value>)",
-        error: "rgb(var(--error) / <alpha-value>)",
-        gray: "rgb(var(--gray) / <alpha-value>)",
-        "input-border": "rgb(var(--input-border) / <alpha-value>)",
-        "input-bg": "rgb(var(--input-bg) / <alpha-value>)",
-        "input-radius": "rgb(var(--input-radius) / <alpha-value>)",
+        accent: {
+          DEFAULT: "rgb(var(--color-accent) / <alpha-value>)",
+          light: "rgb(var(--color-accent-light) / <alpha-value>)",
+        },
 
-        // landing Page colors
-        rose: "#C0C2BA",
-        "button-primary": "#262721",
+        // Surface Colors
+        surface: {
+          DEFAULT: "rgb(var(--color-surface) / <alpha-value>)",
+          dark: "rgb(var(--color-surface-dark) / <alpha-value>)",
+          elevated: "rgb(var(--color-surface-elevated) / <alpha-value>)",
+          muted: "rgb(var(--color-surface-muted) / <alpha-value>)",
+          section: "rgb(var(--color-surface-section) / <alpha-value>)",
+        },
+
+        // Border Colors
+        border: {
+          DEFAULT: "var(--color-border)",
+          light: "rgb(var(--color-border-light) / <alpha-value>)",
+        },
+
+        // Text Colors (nested text classes don't work in Tailwind, creating top-level)
+        "on-dark": "rgb(var(--color-text-on-dark) / <alpha-value>)",
+
+        // Interactive States
+        card: {
+          hover: "rgb(var(--color-card-hover) / <alpha-value>)",
+        },
+
+        // Social/Brand Colors
+        whatsapp: {
+          DEFAULT: "rgb(var(--color-whatsapp) / <alpha-value>)",
+          hover: "rgb(var(--color-whatsapp-hover) / <alpha-value>)",
+        },
+        instagram: {
+          from: "rgb(var(--color-instagram-from) / <alpha-value>)",
+          via: "rgb(var(--color-instagram-via) / <alpha-value>)",
+          to: "rgb(var(--color-instagram-to) / <alpha-value>)",
+        },
+        location: {
+          DEFAULT: "rgb(var(--color-location) / <alpha-value>)",
+          hover: "rgb(var(--color-location-hover) / <alpha-value>)",
+        },
+
+        // Component-specific
+        placeholder: "rgb(var(--color-placeholder) / <alpha-value>)",
+        rating: {
+          star: "rgb(var(--color-rating-star) / <alpha-value>)",
+        },
+        review: {
+          card: "rgb(var(--color-review-card) / <alpha-value>)",
+        },
+        mockup: {
+          border: "rgb(var(--color-mockup-border) / <alpha-value>)",
+        },
+        avatar: {
+          blue: "rgb(var(--color-avatar-blue) / <alpha-value>)",
+          orange: "rgb(var(--color-avatar-orange) / <alpha-value>)",
+          green: "rgb(var(--color-avatar-green) / <alpha-value>)",
+        },
+      },
+      boxShadow: {
+        header: "var(--shadow-header)",
+        card: "var(--shadow-card)",
+        map: "var(--shadow-map)",
       },
     },
   },

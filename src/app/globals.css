@@ -2,6 +2,9 @@
 @import 'star-flicks-ds/styles/tokens.css';
 @import 'star-flicks-ds/styles/fontIcons.css';
 
+/* Import custom color system */
+@import '../styles/colors.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,10 +12,10 @@
 /* Override DS variables with project-specific values */
 @layer base {
   :root {
-    --primary: 69, 43, 158 !important;
-    --primary-light: 227, 224, 255 !important;
-    --secondary: 77, 47, 179 !important;
-    --secondary-light: 201, 241, 255 !important;
+    --primary: 69, 43, 158;
+    --primary-light: 227, 224, 255;
+    --secondary: 77, 47, 179;
+    --secondary-light: 201, 241, 255;
     --background: #575D4B;
     --background-body: #ffffff;
     --foreground: #171717;
@@ -55,17 +58,17 @@ h1, h2, h3, h4, h5, h6 {
 .treatments-swiper .swiper-pagination-bullet {
   width: 10px;
   height: 10px;
-  background: #9ca3af;
+  background: rgb(var(--color-pagination-bullet));
   opacity: 1;
   transition: all 0.3s ease;
 }
 
 .treatments-swiper .swiper-pagination-bullet-active {
-  background: #1f2937;
+  background: rgb(var(--color-pagination-bullet-active));
   width: 24px;
   border-radius: 5px;
 }
 
 .treatments-swiper .swiper-pagination-bullet:hover {
-  background: #6b7280;
+  background: rgb(var(--color-pagination-bullet-hover));
 }

@@ -2,7 +2,7 @@ import { contactConfig } from "@/config/contact";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white py-8">
+    <footer className="bg-surface-dark text-on-dark py-8">
       <div className="container mx-auto px-4">
         <div className="text-center space-y-4">
           <p className="text-sm">
