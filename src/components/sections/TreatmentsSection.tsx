@@ -2,13 +2,12 @@
 
 import { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
+import { Pagination } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
-// Import Swiper styles
+// Import Swiper styles (only core and pagination - navigation is custom)
 import "swiper/css";
-import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { getTreatments } from "@/utils/Helper";
 
@@ -30,12 +29,19 @@ export default function TreatmentsSection() {
   };
 
   return (
-    <section id="tratamentos" className="py-16 md:py-24">
+    <section
+      id="tratamentos"
+      aria-labelledby="treatments-heading"
+      className="py-16 md:py-24"
+    >
       <div className="container mx-auto px-4">
         <div className="space-y-8">
           {/* Header */}
           <div className="max-w-3xl">
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
+            <h2
+              id="treatments-heading"
+              className="text-4xl md:text-5xl font-bold text-primary mb-4"
+            >
               Tratamentos
             </h2>
             <p className="leading-relaxed text-secondary">
@@ -58,7 +64,7 @@ export default function TreatmentsSection() {
               onSlideChange={(swiper) => {
                 updateNavigationState(swiper);
               }}
-              modules={[Navigation, Pagination]}
+              modules={[Pagination]}
               spaceBetween={24}
               speed={400}
               // loop={treatments.length > 4}

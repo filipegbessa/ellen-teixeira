@@ -1,26 +1,26 @@
-import type { NextConfig } from 'next'
-import withPWA from '@ducanh2912/next-pwa'
+import type { NextConfig } from "next";
+import withPWA from "@ducanh2912/next-pwa";
 
 // Bundle Analyzer
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true',
-})
+const withBundleAnalyzer = require("@next/bundle-analyzer")({
+  enabled: process.env.ANALYZE === "true",
+});
 
 const nextConfig: NextConfig = {
   // Optimize CSS loading only in production
   experimental: {
-    optimizeCss: process.env.NODE_ENV === 'production',
+    optimizeCss: process.env.NODE_ENV === "production",
   },
   // Configure external image domains
   images: {
-    formats: ['image/avif', 'image/webp'],
+    formats: ["image/avif", "image/webp"],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'ugc.production.linktr.ee',
-        pathname: '/**',
+        protocol: "https",
+        hostname: "ugc.production.linktr.ee",
+        pathname: "/**",
       },
     ],
   },
@@ -31,26 +31,26 @@ const nextConfig: NextConfig = {
       config.watchOptions = {
         poll: 1000, // Check for changes every second
         aggregateTimeout: 300, // Delay before rebuilding
-        ignored: ['**/node_modules', '**/.next'],
-      }
+        ignored: ["**/node_modules", "**/.next"],
+      };
     }
-    return config
+    return config;
   },
-}
+};
 
 // Combine PWA and Bundle Analyzer
 const configWithPWA = withPWA({
-  dest: 'public',
-  disable: process.env.NODE_ENV === 'development',
+  dest: "public",
+  disable: process.env.NODE_ENV === "development",
   register: true,
   workboxOptions: {
     disableDevLogs: true,
     runtimeCaching: [
       {
         urlPattern: /^https:\/\/fonts\.(?:gstatic)\.com\/.*/i,
-        handler: 'CacheFirst',
+        handler: "CacheFirst",
         options: {
-          cacheName: 'google-fonts-webfonts',
+          cacheName: "google-fonts-webfonts",
           expiration: {
             maxEntries: 4,
             maxAgeSeconds: 365 * 24 * 60 * 60, // 1 year
@@ -59,9 +59,9 @@ const configWithPWA = withPWA({
       },
       {
         urlPattern: /^https:\/\/fonts\.(?:googleapis)\.com\/.*/i,
-        handler: 'StaleWhileRevalidate',
+        handler: "StaleWhileRevalidate",
         options: {
-          cacheName: 'google-fonts-stylesheets',
+          cacheName: "google-fonts-stylesheets",
           expiration: {
             maxEntries: 4,
             maxAgeSeconds: 7 * 24 * 60 * 60, // 1 week
@@ -70,9 +70,9 @@ const configWithPWA = withPWA({
       },
       {
         urlPattern: /\.(?:eot|otf|ttc|ttf|woff|woff2|font.css)$/i,
-        handler: 'StaleWhileRevalidate',
+        handler: "StaleWhileRevalidate",
         options: {
-          cacheName: 'static-font-assets',
+          cacheName: "static-font-assets",
           expiration: {
             maxEntries: 4,
             maxAgeSeconds: 7 * 24 * 60 * 60, // 1 week
@@ -81,9 +81,9 @@ const configWithPWA = withPWA({
       },
       {
         urlPattern: /\.(?:jpg|jpeg|gif|png|svg|ico|webp)$/i,
-        handler: 'StaleWhileRevalidate',
+        handler: "StaleWhileRevalidate",
         options: {
-          cacheName: 'static-image-assets',
+          cacheName: "static-image-assets",
           expiration: {
             maxEntries: 64,
             maxAgeSeconds: 24 * 60 * 60, // 24 hours
@@ -92,9 +92,9 @@ const configWithPWA = withPWA({
       },
       {
         urlPattern: /\/_next\/image\?url=.+$/i,
-        handler: 'StaleWhileRevalidate',
+        handler: "StaleWhileRevalidate",
         options: {
-          cacheName: 'next-image',
+          cacheName: "next-image",
           expiration: {
             maxEntries: 64,
             maxAgeSeconds: 24 * 60 * 60, // 24 hours
@@ -103,9 +103,9 @@ const configWithPWA = withPWA({
       },
       {
         urlPattern: /\.(?:js)$/i,
-        handler: 'StaleWhileRevalidate',
+        handler: "StaleWhileRevalidate",
         options: {
-          cacheName: 'static-js-assets',
+          cacheName: "static-js-assets",
           expiration: {
             maxEntries: 32,
             maxAgeSeconds: 24 * 60 * 60, // 24 hours
@@ -114,9 +114,9 @@ const configWithPWA = withPWA({
       },
       {
         urlPattern: /\.(?:css|less)$/i,
-        handler: 'StaleWhileRevalidate',
+        handler: "StaleWhileRevalidate",
         options: {
-          cacheName: 'static-style-assets',
+          cacheName: "static-style-assets",
           expiration: {
             maxEntries: 32,
             maxAgeSeconds: 24 * 60 * 60, // 24 hours
@@ -125,9 +125,9 @@ const configWithPWA = withPWA({
       },
       {
         urlPattern: /\/_next\/data\/.+\/.+\.json$/i,
-        handler: 'StaleWhileRevalidate',
+        handler: "StaleWhileRevalidate",
         options: {
-          cacheName: 'next-data',
+          cacheName: "next-data",
           expiration: {
             maxEntries: 32,
             maxAgeSeconds: 24 * 60 * 60, // 24 hours
@@ -136,9 +136,9 @@ const configWithPWA = withPWA({
       },
       {
         urlPattern: /\.(?:json|xml|csv)$/i,
-        handler: 'NetworkFirst',
+        handler: "NetworkFirst",
         options: {
-          cacheName: 'static-data-assets',
+          cacheName: "static-data-assets",
           expiration: {
             maxEntries: 32,
             maxAgeSeconds: 24 * 60 * 60, // 24 hours
@@ -150,12 +150,13 @@ const configWithPWA = withPWA({
           const isSameOrigin = self.origin === url.origin;
           if (!isSameOrigin) return false;
           const pathname = url.pathname;
-          if (pathname.startsWith('/api/') || pathname.includes('/api/')) return false;
+          if (pathname.startsWith("/api/") || pathname.includes("/api/"))
+            return false;
           return true;
         },
-        handler: 'NetworkFirst',
+        handler: "NetworkFirst",
         options: {
-          cacheName: 'others',
+          cacheName: "others",
           expiration: {
             maxEntries: 32,
             maxAgeSeconds: 24 * 60 * 60, // 24 hours
@@ -165,6 +166,6 @@ const configWithPWA = withPWA({
       },
     ],
   },
-})(nextConfig)
+})(nextConfig);
 
-export default withBundleAnalyzer(configWithPWA)
+export default withBundleAnalyzer(configWithPWA);

@@ -1,17 +1,25 @@
 "use client";
 
 import { businessInfo } from "@/data/business";
+import Image from "next/image";
 
 export default function AboutSection() {
   return (
-    <section id="sobre" className="bg-surface-section py-16 md:py-24">
+    <section
+      id="sobre"
+      aria-labelledby="about-heading"
+      className="bg-surface-section py-16 md:py-24"
+    >
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl md:text-5xl font-bold text-primary mb-9">
+        <h2
+          id="about-heading"
+          className="text-4xl md:text-5xl font-bold text-primary mb-9"
+        >
           {businessInfo.professional.name}
         </h2>
 
         <div className="md:grid md:grid-cols-[487px_1fr] flex flex-col gap-5">
-          <div className="grid md:grid-cols-[182px_1fr] grid-cols-2 gap-2">
+          <div className="grid md:grid-cols-[182px_1fr] grid-cols-2 gap-2 max-h-[372px]">
             <div className="grid gap-2 grid-rows-2 text-on-dark">
               <div className="bg-secondary rounded-[20px] flex flex-col justify-center p-4 gap-3 md:aspect-square">
                 <p className="text-6xl font-black ">
@@ -33,8 +41,14 @@ export default function AboutSection() {
               </div>
             </div>
 
-            <div className="bg-placeholder h-full rounded-[20px]">
-              <p className="">Foto da Dra. Ellen</p>
+            <div className="bg-placeholder h-full rounded-[20px] overflow-hidden">
+              <Image
+                src="/images/ellen-teixeira.png"
+                alt="Foto da Dra. Ellen Teixeira"
+                width={300}
+                height={400}
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
 

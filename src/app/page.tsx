@@ -1,8 +1,8 @@
 import { SFTypography } from "star-flicks-ds";
 import { FaInstagram, FaMapMarkedAlt } from "react-icons/fa";
-import { FaWhatsapp } from "react-icons/fa";
-
 import Image from "next/image";
+import WhatsAppButton from "@/components/WhatsAppButton";
+import { trackInstagramClick } from "@/utils/analytics";
 
 export default function Home() {
   return (
@@ -14,11 +14,12 @@ export default function Home() {
               <div className="h-28 w-28 overflow-hidden rounded-full mb-4">
                 <Image
                   src="/images/header.webp"
-                  alt="Header"
-                  objectFit="cover"
+                  alt="Dra. Ellen Teixeira"
                   width={300}
                   height={300}
                   priority
+                  className="object-cover w-full h-full"
+                  sizes="112px"
                 />
               </div>
 
@@ -43,31 +44,14 @@ export default function Home() {
 
             <ul className="mt-10 gap-3 flex flex-col">
               <li>
-                <a
-                  href="https://wa.me/5521981035557?text=Ola!%20gostaria%20de%20marcar%20uma%20avalia%C3%A7%C3%A3o"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block"
-                >
-                  <div className="bg-surface-elevated rounded-full pt-0.5 pr-1.5 pb-1 pl-0.5">
-                    <div className="bg-rose rounded-full h-16 flex items-center justify-center gap-2 transition-transform ">
-                      <FaWhatsapp className="text-button-primary text-xl" />
-
-                      <SFTypography
-                        weight="light"
-                        className="text-button-primary"
-                      >
-                        Whatsapp
-                      </SFTypography>
-                    </div>
-                  </div>
-                </a>
+                <WhatsAppButton variant="custom" source="site-page" />
               </li>
               <li>
                 <a
                   href="https://www.instagram.com/draellenteixeira/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackInstagramClick("site-page")}
                   className="block"
                 >
                   <div className="bg-surface-elevated rounded-full pt-0.5 pr-1.5 pb-1 pl-0.5">
@@ -78,7 +62,7 @@ export default function Home() {
                         weight="light"
                         className="text-button-primary"
                       >
-                        Instagram
+                        <span lang="en">Instagram</span>
                       </SFTypography>
                     </div>
                   </div>
@@ -119,7 +103,6 @@ export default function Home() {
 
           <div>
             <SFTypography
-              // element="footer"
               align="center"
               size="xs"
               className="text-on-dark mt-20 block"

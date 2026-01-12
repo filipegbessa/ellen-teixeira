@@ -1,12 +1,12 @@
-'use client'
+"use client";
 
-import Script from 'next/script'
+import Script from "next/script";
 
 export default function GoogleAnalytics() {
-  const gaId = process.env.NEXT_PUBLIC_GA_ID
+  const gaId = process.env.NEXT_PUBLIC_GA_ID;
 
   if (!gaId) {
-    return null
+    return null;
   }
 
   return (
@@ -24,5 +24,5 @@ export default function GoogleAnalytics() {
         `}
       </Script>
     </>
-  )
+  );
 }

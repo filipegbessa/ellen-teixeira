@@ -1,9 +1,9 @@
 /* Import DS styles first - @import must come before all other rules */
-@import 'star-flicks-ds/styles/tokens.css';
-@import 'star-flicks-ds/styles/fontIcons.css';
+@import "star-flicks-ds/styles/tokens.css";
+@import "star-flicks-ds/styles/fontIcons.css";
 
 /* Import custom color system */
-@import '../styles/colors.css';
+@import "../styles/colors.css";
 
 @tailwind base;
 @tailwind components;
@@ -16,7 +16,7 @@
     --primary-light: 227, 224, 255;
     --secondary: 77, 47, 179;
     --secondary-light: 201, 241, 255;
-    --background: #575D4B;
+    --background: #575d4b;
     --background-body: #ffffff;
     --foreground: #171717;
     --font-heading: var(--font-fraunces);
@@ -38,12 +38,44 @@ body {
   font-family: var(--font-fraunces), serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-fraunces), serif;
 }
 
 .content-center {
   @apply mx-auto max-w-screen-lg;
+}
+
+/* Keyboard Navigation - Focus Styles */
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid rgb(var(--color-primary));
+  outline-offset: 3px;
+  border-radius: 0.25rem;
+}
+
+/* Skip Link - Visually hidden until focused */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: rgb(var(--color-primary));
+  color: rgb(var(--color-text-on-dark));
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  font-weight: 600;
+  z-index: 100;
+  border-radius: 0 0 0.5rem 0;
+  transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+  top: 0;
 }
 
 /* Swiper Customization */

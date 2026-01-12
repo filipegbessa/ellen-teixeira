@@ -6,81 +6,68 @@
  */
 
 :root {
-    /* ========================================
+  /* ========================================
        Brand Colors - Purple Family with Green Accent
        ======================================== */
-    --color-primary: 69 43 158; /* #452B9E - Vibrant Purple (trust & elegance) */
-    --color-primary-light: 224 231 255; /* #E0E7FF - Light Lilac */
-    --color-secondary: 99 102 241; /* #6366F1 - Indigo (harmony with purple) */
-    --color-secondary-light: 238 242 255; /* #EEF2FF - Light Indigo */
-    --color-accent: 16 185 129; /* #10B981 - Emerald Green (health & success) */
-    --color-accent-light: 209 250 229; /* #D1FAE5 - Light Green */
+  --color-primary: 69 43 158; /* #452B9E - Vibrant Purple (trust & elegance) */
+  --color-primary-light: 224 231 255; /* #E0E7FF - Light Lilac */
+  --color-secondary: 99 102 241; /* #6366F1 - Indigo (harmony with purple) */
+  --color-secondary-light: 238 242 255; /* #EEF2FF - Light Indigo */
+  --color-accent: 16 185 129; /* #10B981 - Emerald Green (health & success) */
+  --color-accent-light: 209 250 229; /* #D1FAE5 - Light Green */
 
-    /* ========================================
+  /* ========================================
        Surface Colors (Backgrounds, Borders)
        ======================================== */
-    --color-surface: 255 255 255; /* White */
-    --color-surface-dark: 17 24 39; /* Gray-900 - Footer */
-    --color-surface-elevated: 255 255 255; /* White - Cards, Header */
-    --color-surface-muted: 229 231 235; /* Gray-200 - Placeholders */
-    --color-surface-section: 249 250 251; /* Gray-50 - Section backgrounds */
+  --color-surface: 255 255 255; /* White */
+  --color-surface-dark: 17 24 39; /* Gray-900 - Footer */
+  --color-surface-elevated: 255 255 255; /* White - Cards, Header */
+  --color-surface-muted: 229 231 235; /* Gray-200 - Placeholders */
+  --color-surface-section: 249 250 251; /* Gray-50 - Section backgrounds */
 
-    /* Borders & Dividers */
-    --color-border: rgba(69, 43, 158, 0.1); /* Primary purple with 10% opacity */
-    --color-border-light: 229 231 235; /* Gray-200 */
+  /* Borders & Dividers */
+  --color-border: rgba(69, 43, 158, 0.1); /* Primary purple with 10% opacity */
+  --color-border-light: 229 231 235; /* Gray-200 */
 
-    /* ========================================
+  /* ========================================
        Text Colors
        ======================================== */
-    --color-text-primary: rgb(var(--color-primary)); /* Main text */
-    --color-text-secondary: rgb(var(--color-secondary)); /* Secondary text */
-    --color-text-on-dark: 255 255 255; /* Text on dark backgrounds */
-    --color-text-muted: 107 114 128; /* Gray-500 - Subtle text */
+  --color-text-primary: rgb(var(--color-primary)); /* Main text */
+  --color-text-secondary: rgb(var(--color-secondary)); /* Secondary text */
+  --color-text-on-dark: 255 255 255; /* Text on dark backgrounds */
+  --color-text-muted: 107 114 128; /* Gray-500 - Subtle text */
 
-    /* ========================================
+  /* ========================================
        Interactive Colors
        ======================================== */
-    /* Cards */
-    --color-card-hover: 209 213 219; /* Gray-300 - Card hover state */
+  /* Cards */
+  --color-card-hover: 209 213 219; /* Gray-300 - Card hover state */
 
-    /* Social */
-    --color-whatsapp: 34 197 94; /* Green-500 */
-    --color-whatsapp-hover: 22 163 74; /* Green-600 */
+  /* Social */
+  --color-whatsapp: 34 197 94; /* Green-500 */
+  --color-whatsapp-hover: 22 163 74; /* Green-600 */
 
-    --color-instagram-from: 147 51 234; /* Purple-600 */
-    --color-instagram-via: 219 39 119; /* Pink-600 */
-    --color-instagram-to: 249 115 22; /* Orange-500 */
+  --color-instagram-from: 147 51 234; /* Purple-600 */
+  --color-instagram-via: 219 39 119; /* Pink-600 */
+  --color-instagram-to: 249 115 22; /* Orange-500 */
 
-    --color-location: 31 41 55; /* Gray-800 */
-    --color-location-hover: 55 65 81; /* Gray-700 */
+  --color-location: 31 41 55; /* Gray-800 */
+  --color-location-hover: 55 65 81; /* Gray-700 */
 
-    --color-menu-button: rgb(var(--color-primary)); /* Mobile menu button */
+  --color-menu-button: rgb(var(--color-primary)); /* Mobile menu button */
 
-    /* ========================================
+  /* ========================================
        Shadows
        ======================================== */
-    --shadow-header: 0 11px 34px 0 rgba(32, 46, 173, 0.1);
-    --shadow-card: 0 0.375rem 2.125rem 0 rgba(32, 46, 173, 0.2);
-    --shadow-map: 0 2.125rem 5.625rem 0 rgba(32, 46, 173, 0.2);
+  --shadow-header: 0 11px 34px 0 rgba(32, 46, 173, 0.1);
+  --shadow-card: 0 0.375rem 2.125rem 0 rgba(32, 46, 173, 0.2);
+  --shadow-map: 0 2.125rem 5.625rem 0 rgba(32, 46, 173, 0.2);
 
-    /* ========================================
+  /* ========================================
        Component-specific Colors
        ======================================== */
-    /* Swiper pagination */
-    --color-pagination-bullet: 156 163 175; /* Gray-400 */
-    --color-pagination-bullet-active: 31 41 55; /* Gray-800 */
-    --color-pagination-bullet-hover: 107 114 128; /* Gray-500 */
-
-    /* Placeholder backgrounds */
-    --color-placeholder: 239 68 68; /* Red-500 - Temporary, to be replaced */
-
-    /* Reviews/Ratings */
-    --color-rating-star: 234 179 8; /* Yellow-500 */
-    --color-review-card: 229 231 235; /* Gray-200 */
-
-    /* Mockup/Illustration elements */
-    --color-mockup-border: 31 41 55; /* Gray-800 - Phone/device borders */
-    --color-avatar-blue: 59 130 246; /* Blue-500 */
-    --color-avatar-orange: 249 115 22; /* Orange-500 */
-    --color-avatar-green: 34 197 94; /* Green-500 */
+  /* Swiper pagination */
+  --color-pagination-bullet: 156 163 175; /* Gray-400 */
+  --color-pagination-bullet-active: 31 41 55; /* Gray-800 */
+  --color-pagination-bullet-hover: 107 114 128; /* Gray-500 */
 }

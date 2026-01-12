@@ -7,6 +7,7 @@ Landing page moderna e otimizada para o consultório odontológico da Dra. Ellen
 Site institucional responsivo e profissional que apresenta os serviços odontológicos da Dra. Ellen Teixeira, especializada em estética dental, implantes e ortodontia.
 
 **Funcionalidades principais:**
+
 - ✨ Design moderno e responsivo
 - 📱 PWA (Progressive Web App) - Instalável no dispositivo
 - 🚀 Performance otimizada (AVIF, WebP, lazy loading)
@@ -19,30 +20,36 @@ Site institucional responsivo e profissional que apresenta os serviços odontol�
 ## 🚀 Stack Tecnológico
 
 ### Core
+
 - **[Next.js 15](https://nextjs.org/)** - Framework React com App Router e Turbopack
 - **[TypeScript](https://www.typescriptlang.org/)** - Tipagem estática para maior segurança
 - **[React 18](https://react.dev/)** - Biblioteca para interfaces de usuário
 
 ### Estilização
+
 - **[Tailwind CSS](https://tailwindcss.com/)** - Framework CSS utilitário
 - **[Star Flicks DS](https://www.npmjs.com/package/star-flicks-ds)** - Design System customizado
 - **[Poppins Font](https://fonts.google.com/specimen/Poppins)** - Tipografia (todos os pesos)
 
 ### Performance & PWA
+
 - **[@ducanh2912/next-pwa](https://www.npmjs.com/package/@ducanh2912/next-pwa)** - Plugin PWA para Next.js
 - **[Critters](https://www.npmjs.com/package/critters)** - Inlining crítico de CSS
 - **Image Optimization** - AVIF e WebP automático
 
 ### Analytics
+
 - **[Vercel Analytics](https://vercel.com/analytics)** - Dados de tráfego
 - **[Vercel Speed Insights](https://vercel.com/docs/speed-insights)** - Core Web Vitals
 - **[Google Analytics 4](https://analytics.google.com/)** - Análise de audiência
 
 ### UI Components
+
 - **[React Icons](https://react-icons.github.io/react-icons/)** - Biblioteca de ícones
 - **[Swiper](https://swiperjs.com/)** - Carrossel responsivo
 
 ### Dev Tools
+
 - **[@next/bundle-analyzer](https://www.npmjs.com/package/@next/bundle-analyzer)** - Análise de bundle
 - **[ESLint](https://eslint.org/)** - Linter para JavaScript/TypeScript
 
@@ -54,22 +61,26 @@ Site institucional responsivo e profissional que apresenta os serviços odontol�
 ## 🔧 Instalação
 
 1. Clone o repositório:
+
 ```bash
 git clone <repository-url>
 cd ellen-teixeira
 ```
 
 2. Instale as dependências:
+
 ```bash
 npm install
 ```
 
 3. Configure as variáveis de ambiente:
+
 ```bash
 cp .env.example .env
 ```
 
 Edite o arquivo `.env` com suas configurações:
+
 - `NEXT_PUBLIC_SITE_URL` - URL do site em produção
 - `NEXT_PUBLIC_GA_ID` - ID do Google Analytics (opcional)
 
@@ -103,6 +114,7 @@ Se o **hot reload não estiver funcionando** após salvar alterações:
    - Application → Storage → Clear site data
 
 2. **Reinicie o servidor:**
+
    ```bash
    npm run clean
    npm run dev:turbo

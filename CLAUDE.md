@@ -7,6 +7,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 This is a Next.js 15 landing page for Dra. Ellen Teixeira's dental practice (Odontologia). It's a single-page application built with TypeScript, React, and Tailwind CSS, featuring PWA support, analytics integration, and SEO optimization.
 
 **Key Technologies:**
+
 - Next.js 15 with App Router
 - TypeScript
 - Tailwind CSS
@@ -116,6 +117,7 @@ All three are loaded in `src/app/layout.tsx:85-88`
 ### SEO Configuration
 
 Comprehensive metadata configuration in `src/app/layout.tsx:16-75`:
+
 - Dynamic metadataBase from `NEXT_PUBLIC_SITE_URL` env var
 - OpenGraph and Twitter card meta tags
 - Keywords: odontologia, dentista, Ellen Teixeira, estética dental, implantes, ortodontia

@@ -5,9 +5,16 @@ import { getReviews } from "@/utils/Helper";
 export default function ReviewsSection() {
   const reviews = getReviews();
   return (
-    <section id="avaliacoes" className="bg-surface-section py-16 md:py-24">
+    <section
+      id="avaliacoes"
+      aria-labelledby="reviews-heading"
+      className="bg-surface-section py-16 md:py-24"
+    >
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl md:text-5xl font-bold text-primary mb-12">
+        <h2
+          id="reviews-heading"
+          className="text-4xl md:text-5xl font-bold text-primary mb-12"
+        >
           Avaliações dos Pacientes
         </h2>
 
@@ -22,7 +29,9 @@ export default function ReviewsSection() {
 
                 {/* Google logo placeholder */}
                 <div className="text-center pt-4 pb-8">
-                  <div className="text-2xl font-bold">Google</div>
+                  <div className="text-2xl font-bold" lang="en">
+                    Google
+                  </div>
                 </div>
 
                 {/* Review items */}
@@ -48,7 +57,7 @@ export default function ReviewsSection() {
               <p className="text-2xl font-bold text-primary">
                 A sua
                 <br />
-                opnião
+                opinião
                 <br />
                 vale
                 <br />

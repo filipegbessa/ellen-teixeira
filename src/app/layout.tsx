@@ -1,24 +1,18 @@
 import type { Metadata } from "next";
-import { Poppins, Fraunces } from "next/font/google";
+import { Fraunces } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import StructuredData from "@/components/StructuredData";
 import "./globals.css";
 
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  style: ["normal", "italic"],
-  display: "swap",
-  variable: "--font-poppins",
-});
-
 const fraunces = Fraunces({
   subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "600", "700", "800", "900"],
+  weight: ["300", "600", "700", "900"], // light, semibold, bold, black
   display: "swap",
   variable: "--font-fraunces",
+  preload: true,
+  fallback: ["Georgia", "serif"],
 });
 
 export const metadata: Metadata = {
@@ -54,7 +48,7 @@ export const metadata: Metadata = {
     siteName: "Dra. Ellen Teixeira - Odontologia",
     images: [
       {
-        url: "/images/og-image.jpg", // Adicione esta imagem depois
+        url: "/images/og-image.png", // Adicione esta imagem depois
         width: 1200,
         height: 630,
         alt: "Ellen Teixeira - Odontologia",
@@ -66,7 +60,7 @@ export const metadata: Metadata = {
     title: "Dra. Ellen Teixeira - Odontologia",
     description:
       "Especialista em prótese e implantodontia. Atendimento personalizado e humanizado.",
-    images: ["/images/og-image.jpg"],
+    images: ["/images/og-image.png"],
   },
   robots: {
     index: true,
