@@ -7,10 +7,6 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 });
 
 const nextConfig: NextConfig = {
-  // Optimize CSS loading only in production
-  experimental: {
-    optimizeCss: process.env.NODE_ENV === "production",
-  },
   // Configure external image domains
   images: {
     formats: ["image/avif", "image/webp"],

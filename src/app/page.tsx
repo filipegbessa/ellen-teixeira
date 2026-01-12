@@ -1,3 +1,5 @@
+"use client";
+
 import { SFTypography } from "star-flicks-ds";
 import { FaInstagram, FaMapMarkedAlt } from "react-icons/fa";
 import Image from "next/image";
