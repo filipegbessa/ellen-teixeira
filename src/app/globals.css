@@ -5,6 +5,9 @@
 /* Import custom color system */
 @import "../styles/colors.css";
 
+/* Import Swiper styles */
+@import "swiper/css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -103,4 +106,21 @@ a:focus-visible {
 
 .treatments-swiper .swiper-pagination-bullet:hover {
   background: rgb(var(--color-pagination-bullet-hover));
+}
+
+/* Reviews Swiper */
+.reviews-swiper {
+  width: 100%;
+  max-width: 100%;
+}
+
+.reviews-swiper .swiper-wrapper {
+  display: flex;
+  align-items: stretch;
+}
+
+.reviews-swiper .swiper-slide {
+  height: auto;
+  display: flex;
+  box-sizing: border-box;
 }

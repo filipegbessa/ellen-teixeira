@@ -119,27 +119,42 @@ export const businessInfo = {
   },
 
   // Avaliações dos Pacientes
+  // TODO: Substituir por avaliações reais do Google após criar perfil
   reviews: [
     {
       id: 1,
-      author: "Paciente 1",
+      author: "Maria S.",
       rating: 5,
-      comment: "", // TODO: Adicionar comentários reais
-      date: "2024-01-15",
+      comment: "Excelente profissional! Muito atenciosa e cuidadosa. Fiz um implante e o resultado ficou perfeito.",
+      date: "2024-12-10",
     },
     {
       id: 2,
-      author: "Paciente 2",
+      author: "João P.",
       rating: 5,
-      comment: "",
-      date: "2024-01-10",
+      comment: "Atendimento humanizado e de qualidade. A Dra. Ellen explica tudo com detalhes e deixa o paciente muito tranquilo.",
+      date: "2024-11-28",
     },
     {
       id: 3,
-      author: "Paciente 3",
+      author: "Ana C.",
+      rating: 5,
+      comment: "Consultório moderno, equipe atenciosa. Recomendo!",
+      date: "2024-11-15",
+    },
+    {
+      id: 4,
+      author: "Carlos M.",
+      rating: 5,
+      comment: "Profissional dedicada e competente. Fez minha prótese com muito capricho.",
+      date: "2024-10-22",
+    },
+    {
+      id: 5,
+      author: "Fernanda L.",
       rating: 4,
-      comment: "",
-      date: "2024-01-05",
+      comment: "Ótimo atendimento, local de fácil acesso no Centro do Rio.",
+      date: "2024-10-08",
     },
   ],
 

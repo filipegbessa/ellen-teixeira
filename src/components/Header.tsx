@@ -49,7 +49,7 @@ export default function Header() {
       <header className="min-w-[95%] md:max-w-[615px] md:min-w-min bg-surface-elevated fixed top-4 left-1/2 -translate-x-1/2 z-50 border border-border shadow-header rounded-3xl h-[70px]">
         <div className="flex items-center justify-between gap-4 h-full px-4">
           {/* Logo */}
-          <div className="flex items-center">
+          <a className="flex items-center no-underline" href="#inicio">
             <Image
               src="/images/logo.png"
               alt="Ellen Teixeira Odontologia"
@@ -58,7 +58,7 @@ export default function Header() {
               className="h-12 w-auto object-contain"
               priority
             />
-          </div>
+          </a>
 
           {/* Menu Desktop */}
           <nav className="hidden md:flex items-center gap-4">

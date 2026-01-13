@@ -15,7 +15,7 @@ export default function Home() {
             <div id="header" className="flex flex-col items-center">
               <div className="h-28 w-28 overflow-hidden rounded-full mb-4">
                 <Image
-                  src="/images/header.webp"
+                  src="/images/landing/header.webp"
                   alt="Dra. Ellen Teixeira"
                   width={300}
                   height={300}

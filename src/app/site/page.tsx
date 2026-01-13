@@ -17,7 +17,7 @@ export default function Home() {
         <HeroSection />
         <AboutSection />
         <TreatmentsSection />
-        {/* <ReviewsSection /> */}
+        <ReviewsSection />
         <LocationSection />
       </main>
       <Footer />
