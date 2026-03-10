@@ -55,21 +55,6 @@ export const trackSectionNavigation = (sectionName: string) => {
 };
 
 /**
- * Trackear interações com o Swiper de reviews
- * @param action - Ação realizada (ex: "slide_next", "slide_prev", "pagination_click")
- * @param slideIndex - Índice do slide (opcional)
- */
-export const trackSwiperInteraction = (action: string, slideIndex?: number) => {
-  if (isGtagAvailable()) {
-    window.gtag("event", "swiper_interaction", {
-      event_category: "engagement",
-      event_label: action,
-      value: slideIndex !== undefined ? slideIndex : 0,
-    });
-  }
-};
-
-/**
  * Trackear cliques no botão de localização/mapa
  * @param action - Ação realizada (ex: "map_load", "directions_click")
  */
@@ -93,20 +78,6 @@ export const trackContactClick = (contactType: string) => {
       event_category: "contact",
       event_label: contactType,
       value: 1,
-    });
-  }
-};
-
-/**
- * Trackear visualização de seção (scroll tracking)
- * @param sectionName - Nome da seção visualizada
- */
-export const trackSectionView = (sectionName: string) => {
-  if (isGtagAvailable()) {
-    window.gtag("event", "section_view", {
-      event_category: "engagement",
-      event_label: sectionName,
-      non_interaction: true, // Não afeta bounce rate
     });
   }
 };

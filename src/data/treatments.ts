@@ -25,7 +25,7 @@ export const treatments = [
   },
   {
     id: 5,
-    name: "Invisalign",
+    name: "Alinhadores",
     description:
       "Tratamento ortodôntico invisível com alinhadores transparentes",
     image: "/images/treatments/5.jpg",
