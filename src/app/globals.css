@@ -12,7 +12,12 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Override DS variables with project-specific values */
+/*
+ * Overrides dos tokens do star-flicks-ds.
+ * Estas variáveis são consumidas internamente pelos componentes do DS (ex: SFTypography)
+ * usados na rota / (link-in-bio). Não confundir com as variáveis --color-* de colors.css,
+ * que são usadas pelo Tailwind nos componentes da rota /site.
+ */
 @layer base {
   :root {
     --primary: 69, 43, 158;
@@ -36,7 +41,7 @@
 } */
 
 body {
-  color: var(--secondary);
+  color: rgb(var(--color-secondary));
   background: var(--background-body);
   font-family: var(--font-fraunces), serif;
 }
@@ -48,10 +53,6 @@ h4,
 h5,
 h6 {
   font-family: var(--font-fraunces), serif;
-}
-
-.content-center {
-  @apply mx-auto max-w-screen-lg;
 }
 
 /* Keyboard Navigation - Focus Styles */

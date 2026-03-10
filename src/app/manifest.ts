@@ -8,8 +8,8 @@ export default function manifest(): MetadataRoute.Manifest {
       "Odontologia especializada em estética dental, implantes e ortodontia.",
     start_url: "/",
     display: "standalone",
-    background_color: "#eeeeee",
-    theme_color: "#575D4B",
+    background_color: "#ffffff",
+    theme_color: "#452B9E",
     orientation: "portrait",
     icons: [
       {

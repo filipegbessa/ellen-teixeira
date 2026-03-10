@@ -14,10 +14,15 @@ const config: Config = {
         sans: ["var(--font-fraunces)", "serif"],
       },
       colors: {
-        // Legacy variables (kept for compatibility)
+        // ----------------------------------------
+        // Cores da rota / (link-in-bio)
+        // Usadas em page.tsx e WhatsAppButton (variant custom)
+        // ----------------------------------------
         "background-body": "var(--background-body)",
         background: "var(--background)",
         foreground: "var(--foreground)",
+        rose: "#C0C2BA",
+        "button-primary": "#262721",
 
         // Brand Colors
         primary: {
@@ -50,6 +55,7 @@ const config: Config = {
 
         // Text Colors (nested text classes don't work in Tailwind, creating top-level)
         "on-dark": "rgb(var(--color-text-on-dark) / <alpha-value>)",
+        "text-muted": "rgb(var(--color-text-muted) / <alpha-value>)",
 
         // Interactive States
         card: {
