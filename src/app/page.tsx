@@ -5,11 +5,12 @@ import { FaInstagram, FaMapMarkedAlt } from "react-icons/fa";
 import Image from "next/image";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { trackInstagramClick } from "@/utils/analytics";
+import { contactConfig } from "@/config/contact";
 
 export default function Home() {
   return (
     <div className="flex min-h-screen pt-10">
-      <div className="content-center bg-background rounded-t-[50px] flex px-16 pt-40 pb-4 !max-w-xl w-full">
+      <div className="mx-auto bg-background rounded-t-[50px] flex px-16 pt-40 pb-4 max-w-xl w-full">
         <div className="w-full flex flex-col justify-between">
           <div>
             <div id="header" className="flex flex-col items-center">
@@ -50,7 +51,7 @@ export default function Home() {
               </li>
               <li>
                 <a
-                  href="https://www.instagram.com/draellenteixeira/"
+                  href={contactConfig.social.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => trackInstagramClick("site-page")}
@@ -72,7 +73,7 @@ export default function Home() {
               </li>
               <li>
                 <a
-                  href="https://www.google.com/maps/place/R.+Sete+de+Setembro,+98+-+Centro,+Rio+de+Janeiro+-+RJ,+20050-002/@-22.9053433,-43.1834055,17z/data=!3m1!4b1!4m10!1m2!2m1!1sR.+Sete+de+Setembro,+98!3m6!1s0x997f5e1703d8b5:0xfa658916427617c!8m2!3d-22.9053434!4d-43.17854!15sChdSLiBTZXRlIGRlIFNldGVtYnJvLCA5OJIBEWNvbXBvdW5kX2J1aWxkaW5n4AEA!16s%2Fg%2F11c1ydkr90?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D"
+                  href={contactConfig.address.mapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block"
@@ -95,10 +96,10 @@ export default function Home() {
 
             <div className="mt-5 px-5">
               <SFTypography className="text-on-dark">
-                R. Sete de Setembro, 98 - Sala 609
+                {contactConfig.address.line1}
               </SFTypography>
               <SFTypography className="text-on-dark">
-                Centro, Rio de Janeiro - RJ
+                {contactConfig.address.line2}
               </SFTypography>
             </div>
           </div>

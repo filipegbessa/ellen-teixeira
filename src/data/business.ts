@@ -94,6 +94,9 @@ export const businessInfo = {
       line2: "Centro, Rio de Janeiro - RJ",
       full: "R. Sete de Setembro, 98 - Sala 609, Centro, Rio de Janeiro - RJ, 20050-006",
     },
+    // Link direto para o Google Maps
+    mapsUrl:
+      "https://www.google.com/maps/place/R.+Sete+de+Setembro,+98+-+Centro,+Rio+de+Janeiro+-+RJ,+20050-002/@-22.9053433,-43.1834055,17z",
   },
 
   // Horário de Funcionamento
