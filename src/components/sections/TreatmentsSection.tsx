@@ -67,7 +67,7 @@ export default function TreatmentsSection() {
               modules={[Pagination]}
               spaceBetween={24}
               speed={400}
-              // loop={treatments.length > 4}
+              loop={treatments.length > 4}
               grabCursor={true}
               watchSlidesProgress={true}
               slidesPerGroup={1}

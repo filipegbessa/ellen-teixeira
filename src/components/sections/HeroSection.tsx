@@ -51,6 +51,7 @@ export default function HeroSection() {
               alt="Foto da Dra. Ellen Teixeira"
               width={300}
               height={400}
+              priority
               className="w-full h-full object-cover"
             />
           </div>

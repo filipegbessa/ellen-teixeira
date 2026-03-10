@@ -7,15 +7,22 @@ import { contactConfig } from "@/config/contact";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { trackInstagramClick, trackSectionNavigation } from "@/utils/analytics";
 
+type MenuItem = {
+  label: string;
+  href: string;
+  mobileOnly?: boolean;
+};
+
+const menuItems: MenuItem[] = [
+  { label: "Sobre", href: "#sobre" },
+  { label: "Tratamentos", href: "#tratamentos" },
+  { label: "Avaliações", href: "#avaliacoes" },
+  // mobileOnly: aparece apenas no menu mobile (no desktop há o ícone de localização no header)
+  { label: "Localização", href: "#localizacao", mobileOnly: true },
+];
+
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  const menuItems = [
-    { label: "Sobre", href: "#sobre" },
-    { label: "Tratamentos", href: "#tratamentos" },
-    { label: "Avaliações", href: "#avaliacoes" },
-    { label: "Localização", href: "#localizacao", noMobile: true },
-  ];
 
   const handleMenuClick = (sectionName: string) => {
     trackSectionNavigation(sectionName);
@@ -63,7 +70,7 @@ export default function Header() {
           {/* Menu Desktop */}
           <nav className="hidden md:flex items-center gap-4">
             {menuItems.map((item) => {
-              if (item.noMobile) return null;
+              if (item.mobileOnly) return null;
 
               return (
                 <a

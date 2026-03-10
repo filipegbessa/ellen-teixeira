@@ -9,7 +9,7 @@ export default function StructuredData() {
     "@context": "https://schema.org",
     "@type": "Dentist",
     name: businessInfo.professional.name,
-    image: `${process.env.NEXT_PUBLIC_SITE_URL}/images/dra-ellen.jpg`,
+    image: `${process.env.NEXT_PUBLIC_SITE_URL}/images/ellen-teixeira.png`,
     description:
       businessInfo.professional.title +
       ". Atendimento odontológico personalizado e humanizado no Rio de Janeiro.",

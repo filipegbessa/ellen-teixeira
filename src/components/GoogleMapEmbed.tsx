@@ -13,11 +13,9 @@ interface GoogleMapEmbedProps {
 /**
  * Google Maps Embed with Lazy Loading
  *
- * This component implements a performance-optimized Google Maps embed:
- * - Desktop: Loads map automatically for better UX
- * - Mobile: Shows placeholder/facade until user clicks to load (saves data)
- * - Prevents loading heavy iframe on mobile until needed
- * - Reduces data usage for mobile users who don't interact with the map
+ * - Desktop (>= 768px): carrega o mapa automaticamente, inclusive ao redimensionar
+ * - Mobile (< 768px): exibe placeholder até o usuário clicar (economia de dados)
+ * - Uma vez carregado, o mapa permanece mesmo se o viewport voltar ao tamanho mobile
  */
 export default function GoogleMapEmbed({
   src,
@@ -25,26 +23,19 @@ export default function GoogleMapEmbed({
   className = "",
 }: GoogleMapEmbedProps) {
   const [isLoaded, setIsLoaded] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    // Detecta se é mobile (viewport < 768px = md breakpoint do Tailwind)
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setIsLoaded(true);
+      }
     };
 
-    // Verifica no mount
-    checkMobile();
+    // Verifica no mount e a cada resize
+    handleResize();
+    window.addEventListener("resize", handleResize);
 
-    // Se não for mobile, carrega automaticamente
-    if (window.innerWidth >= 768) {
-      setIsLoaded(true);
-    }
-
-    // Adiciona listener para mudanças de viewport
-    window.addEventListener("resize", checkMobile);
-
-    return () => window.removeEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const handleLoadMap = () => {
