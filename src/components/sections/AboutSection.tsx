@@ -55,7 +55,7 @@ export default function AboutSection() {
           <div className="rounded-[20px] text-secondary">
             <p className="leading-relaxed">{businessInfo.professional.bio}</p>
 
-            <div className="space-y-2">
+            <div className="space-y-2 pt-4">
               {businessInfo.qualifications.map((qual, index) => (
                 <div key={index} className="">
                   <p className="text-sm">- {qual.title}</p>

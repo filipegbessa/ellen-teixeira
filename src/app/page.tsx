@@ -1,7 +1,7 @@
 "use client";
 
 import { SFTypography } from "star-flicks-ds";
-import { FaInstagram, FaMapMarkedAlt } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
 import Image from "next/image";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { trackInstagramClick } from "@/utils/analytics";

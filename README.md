@@ -1,64 +1,64 @@
-# 🦷 Ellen Teixeira - Odontologia
+# Ellen Teixeira - Odontologia
 
 Landing page moderna e otimizada para o consultório odontológico da Dra. Ellen Teixeira, desenvolvida com Next.js 15, focando em performance, SEO e experiência do usuário.
 
-## 📖 Sobre o Projeto
+## Sobre o Projeto
 
-Site institucional responsivo e profissional que apresenta os serviços odontológicos da Dra. Ellen Teixeira, especializada em estética dental, implantes e ortodontia.
+Site institucional responsivo com duas rotas distintas:
+
+- `/` — Página link-in-bio (mobile-first, estilo Linktree) com WhatsApp, Instagram e endereço
+- `/site` — Landing page completa com seções: Hero, Sobre, Tratamentos, Avaliações e Localização
 
 **Funcionalidades principais:**
 
-- ✨ Design moderno e responsivo
-- 📱 PWA (Progressive Web App) - Instalável no dispositivo
-- 🚀 Performance otimizada (AVIF, WebP, lazy loading)
-- 🔍 SEO completo com structured data
-- 📊 Analytics integrado (GA4 + Vercel)
-- 💬 Integração direta com WhatsApp
-- 📍 Localização com Google Maps
-- 🎨 Design System customizado
+- Design moderno e responsivo
+- PWA (Progressive Web App) — instalável no dispositivo
+- Performance otimizada (AVIF, WebP, lazy loading)
+- SEO completo com structured data (Schema.org)
+- Analytics integrado (GA4 + Vercel)
+- Integração direta com WhatsApp
+- Localização com Google Maps embed
+- Avaliações em tempo real via API backend (ellen-api)
 
-## 🚀 Stack Tecnológico
+## Stack Tecnológico
 
 ### Core
-
-- **[Next.js 15](https://nextjs.org/)** - Framework React com App Router e Turbopack
-- **[TypeScript](https://www.typescriptlang.org/)** - Tipagem estática para maior segurança
-- **[React 18](https://react.dev/)** - Biblioteca para interfaces de usuário
+- **[Next.js 15](https://nextjs.org/)** — Framework React com App Router
+- **[TypeScript](https://www.typescriptlang.org/)** — Tipagem estática
+- **[React 18](https://react.dev/)** — Biblioteca para interfaces de usuário
 
 ### Estilização
-
-- **[Tailwind CSS](https://tailwindcss.com/)** - Framework CSS utilitário
-- **[Star Flicks DS](https://www.npmjs.com/package/star-flicks-ds)** - Design System customizado
-- **[Poppins Font](https://fonts.google.com/specimen/Poppins)** - Tipografia (todos os pesos)
+- **[Tailwind CSS](https://tailwindcss.com/)** — Framework CSS utilitário
+- **[Star Flicks DS](https://www.npmjs.com/package/star-flicks-ds)** — Design system customizado (rota `/`)
+- **Fraunces** — Tipografia principal (Google Fonts)
 
 ### Performance & PWA
-
-- **[@ducanh2912/next-pwa](https://www.npmjs.com/package/@ducanh2912/next-pwa)** - Plugin PWA para Next.js
-- **[Critters](https://www.npmjs.com/package/critters)** - Inlining crítico de CSS
-- **Image Optimization** - AVIF e WebP automático
+- **[@ducanh2912/next-pwa](https://www.npmjs.com/package/@ducanh2912/next-pwa)** — Plugin PWA para Next.js
+- **Image Optimization** — AVIF e WebP automático
 
 ### Analytics
-
-- **[Vercel Analytics](https://vercel.com/analytics)** - Dados de tráfego
-- **[Vercel Speed Insights](https://vercel.com/docs/speed-insights)** - Core Web Vitals
-- **[Google Analytics 4](https://analytics.google.com/)** - Análise de audiência
+- **[Vercel Analytics](https://vercel.com/analytics)** — Dados de tráfego
+- **[Vercel Speed Insights](https://vercel.com/docs/speed-insights)** — Core Web Vitals
+- **[Google Analytics 4](https://analytics.google.com/)** — Análise de audiência
 
 ### UI Components
+- **[React Icons](https://react-icons.github.io/react-icons/)** — Biblioteca de ícones
+- **[Swiper](https://swiperjs.com/)** — Carrossel responsivo (tratamentos e avaliações)
 
-- **[React Icons](https://react-icons.github.io/react-icons/)** - Biblioteca de ícones
-- **[Swiper](https://swiperjs.com/)** - Carrossel responsivo
+### HTTP Client
+- **[Axios](https://axios-http.com/)** — Requisições para a API backend
 
 ### Dev Tools
+- **[@next/bundle-analyzer](https://www.npmjs.com/package/@next/bundle-analyzer)** — Análise de bundle
+- **[ESLint](https://eslint.org/)** — Linter para JavaScript/TypeScript
+- **[Jest](https://jestjs.io/) + [Testing Library](https://testing-library.com/)** — Testes unitários
 
-- **[@next/bundle-analyzer](https://www.npmjs.com/package/@next/bundle-analyzer)** - Análise de bundle
-- **[ESLint](https://eslint.org/)** - Linter para JavaScript/TypeScript
-
-## 📋 Pré-requisitos
+## Pré-requisitos
 
 - Node.js 20.x ou superior
-- npm ou yarn
+- npm
 
-## 🔧 Instalação
+## Instalação
 
 1. Clone o repositório:
 
@@ -79,12 +79,9 @@ npm install
 cp .env.example .env
 ```
 
-Edite o arquivo `.env` com suas configurações:
+Edite o `.env` com suas configurações (veja seção [Variáveis de Ambiente](#variáveis-de-ambiente)).
 
-- `NEXT_PUBLIC_SITE_URL` - URL do site em produção
-- `NEXT_PUBLIC_GA_ID` - ID do Google Analytics (opcional)
-
-## 💻 Comandos Disponíveis
+## Comandos Disponíveis
 
 ```bash
 # Desenvolvimento
@@ -95,160 +92,119 @@ npm run dev:turbo     # Servidor com Turbopack (mais rápido, recomendado)
 npm run build         # Build otimizado para produção
 npm start             # Servidor de produção
 
-# Qualidade de Código
+# Qualidade de código
 npm run lint          # Executa ESLint
+npm test              # Roda todos os testes
+npm run test:watch    # Testes em modo watch
 
-# Análise e Manutenção
+# Manutenção
 npm run analyze       # Analisa o tamanho do bundle
 npm run clean         # Limpa cache do Next.js (.next)
 ```
 
-> 💡 **Dica**: Use `npm run dev:turbo` para desenvolvimento mais rápido com hot reload melhorado.
+> **Dica**: Use `npm run dev:turbo` para desenvolvimento mais rápido com hot reload melhorado.
 
-## 🔧 Troubleshooting
+## Variáveis de Ambiente
 
-Se o **hot reload não estiver funcionando** após salvar alterações:
+| Variável | Descrição | Obrigatório |
+|---|---|---|
+| `NEXT_PUBLIC_SITE_URL` | URL base do site em produção | Sim |
+| `NEXT_PUBLIC_GA_ID` | ID do Google Analytics (ex: G-XXXXXXXX) | Não |
+| `NEXT_PUBLIC_PLACE_ID` | Place ID do consultório no Google Maps | Não |
+| `REVIEWS_API_URL` | URL da API backend (ellen-api) | Não* |
 
-1. **Limpe o cache do navegador:**
-   - DevTools (F12) → Application → Service Workers → Unregister
-   - Application → Storage → Clear site data
+> *Se `REVIEWS_API_URL` não estiver configurado, a seção de avaliações exibe estado vazio.
 
-2. **Reinicie o servidor:**
-
-   ```bash
-   npm run clean
-   npm run dev:turbo
-   ```
-
-3. **Veja mais detalhes em:** [`DESENVOLVIMENTO.md`](./DESENVOLVIMENTO.md)
-
-> ⚠️ **Nota**: O PWA cria service workers que fazem cache agressivo. Durante o desenvolvimento, sempre mantenha o cache desabilitado no DevTools (Network → Disable cache).
-
-## 📁 Estrutura do Projeto
+## Estrutura do Projeto
 
 ```
 src/
 ├── app/
-│   ├── layout.tsx           # Layout raiz com metadata, fontes e analytics
-│   ├── page.tsx             # Página principal (composição das seções)
+│   ├── layout.tsx           # Layout raiz: metadata, fonte Fraunces, analytics
+│   ├── page.tsx             # Rota `/` — Link-in-bio (WhatsApp, Instagram)
+│   ├── icon.svg             # Favicon (dente branco em fundo roxo)
+│   ├── site/
+│   │   └── page.tsx         # Rota `/site` — Landing page completa
+│   ├── globals.css          # Estilos globais, Tailwind, Swiper, variáveis CSS
 │   ├── manifest.ts          # Configuração PWA
-│   ├── robots.ts            # Configuração de robots.txt
-│   ├── sitemap.ts           # Geração de sitemap
-│   └── globals.css          # Estilos globais e variáveis CSS
+│   ├── robots.ts            # Robots.txt dinâmico
+│   └── sitemap.ts           # Sitemap dinâmico
 │
 ├── components/
-│   ├── Header.tsx           # Cabeçalho com logo e CTA
-│   ├── Footer.tsx           # Rodapé com links sociais
-│   ├── GoogleAnalytics.tsx  # Integração com GA4
-│   ├── StructuredData.tsx   # Schema.org para SEO
-│   │
-│   └── sections/            # Seções da landing page
-│       ├── HeroSection.tsx       # Banner principal
-│       ├── AboutSection.tsx      # Sobre a dentista
-│       ├── TreatmentsSection.tsx # Serviços oferecidos
-│       ├── ReviewsSection.tsx    # Depoimentos
-│       └── LocationSection.tsx   # Localização e contato
+│   ├── GoogleAnalytics.tsx  # Integração GA4 (client-side)
+│   ├── GoogleMapEmbed.tsx   # Google Maps com lazy loading
+│   ├── Header.tsx           # Header fixo com nav desktop + menu mobile
+│   ├── Footer.tsx           # Rodapé com copyright e CRO
+│   ├── StructuredData.tsx   # Schema.org JSON-LD (Dentist)
+│   ├── WhatsAppButton.tsx   # Botão com 3 variantes: icon, large, custom
+│   └── sections/
+│       ├── HeroSection.tsx        # Hero com headline e CTA
+│       ├── AboutSection.tsx       # Bio, formação e anos de experiência
+│       ├── TreatmentsSection.tsx  # Carrossel de tratamentos (Swiper)
+│       ├── ReviewsSection.tsx     # Server Component — busca avaliações da API
+│       ├── ReviewsCarousel.tsx    # Client Component — carrossel de avaliações
+│       └── LocationSection.tsx    # Endereço, contato e mapa
 │
-├── config/                  # Arquivos de configuração
-├── data/                    # Dados estáticos (textos, depoimentos, etc)
-└── utils/                   # Funções utilitárias
+├── config/
+│   └── contact.ts           # Re-exporta businessInfo para componentes
+│
+├── data/
+│   ├── business.ts          # Fonte única de verdade: todos os dados do negócio
+│   └── treatments.ts        # Lista de tratamentos oferecidos
+│
+├── lib/
+│   └── api.ts               # API client (axios + unstable_cache) para ellen-api
+│
+├── styles/
+│   └── colors.css           # Design tokens: variáveis CSS de cor
+│
+├── types/
+│   ├── gtag.d.ts            # Tipagem global para window.gtag
+│   └── review.ts            # Interface Review e ReviewsSummary
+│
+└── utils/
+    ├── analytics.ts         # Funções de tracking de eventos GA4
+    └── Helper.ts            # Helpers: getWhatsAppUrl, getTreatments
 ```
 
-## 🎨 Design System
+## Arquitetura de Dados
 
-O projeto utiliza o **Star Flicks DS**, um design system customizado. As cores são configuradas através de CSS variables:
+### Fonte de verdade — `src/data/business.ts`
+Único arquivo a editar para atualizar informações do negócio: dados da profissional, qualificações, especialidades, contato, endereço e horários.
 
-- `--background`: #575D4B (verde oliva)
-- `--background-body`: #eeeeee (cinza claro)
-- `rose`: #C0C2BA (botões)
-- `button-primary`: #262721 (texto dos botões)
+`experienceYears` é **calculado automaticamente** a partir do `periodEnd` da qualificação marcada com `isMain: true`.
 
-## 🌐 Deploy
+### Avaliações — ellen-api
+As avaliações dos pacientes são buscadas da API backend (NestJS + PostgreSQL), que sincroniza periodicamente com o Google Places. O frontend usa `unstable_cache` com revalidação a cada 1 hora.
 
-O projeto está configurado para deploy na **Vercel**:
+## Deploy
 
+O projeto está hospedado na **Vercel**: [ellen-teixeira.vercel.app](https://ellen-teixeira.vercel.app)
+
+Para um novo deploy:
 1. Conecte o repositório na Vercel
-2. Configure as variáveis de ambiente no painel da Vercel
-3. O deploy será automático a cada push na branch principal
+2. Configure as variáveis de ambiente no painel
+3. O deploy é automático a cada push na branch `main`
 
-### Vercel Analytics
+## Troubleshooting
 
-As integrações com Vercel Analytics e Speed Insights são ativadas automaticamente quando o projeto é deployado na Vercel.
+Se o **hot reload não estiver funcionando**:
 
-## 📱 PWA (Progressive Web App)
+```bash
+npm run clean
+npm run dev:turbo
+```
 
-O site funciona como PWA, permitindo instalação no dispositivo do usuário:
+> O PWA cria service workers com cache agressivo. Em desenvolvimento, mantenha o cache desabilitado no DevTools (Network → Disable cache).
 
-- **Ícones**: 192x192 e 512x512 pixels
-- **Modo**: Standalone (aparência de app nativo)
-- **Tema**: #575D4B
-- **Orientação**: Portrait
+## Licença
 
-Os service workers são gerados automaticamente no build e desabilitados em desenvolvimento.
-
-## 🔍 SEO
-
-O projeto inclui otimizações completas de SEO:
-
-- Meta tags OpenGraph e Twitter Cards
-- Sitemap.xml gerado automaticamente
-- Robots.txt configurado
-- Structured data para mecanismos de busca
-- Imagens otimizadas (AVIF e WebP)
-
-## 📊 Analytics
-
-Três soluções de analytics integradas:
-
-1. **Google Analytics 4** - Análise detalhada de audiência
-2. **Vercel Analytics** - Dados de tráfego e comportamento
-3. **Vercel Speed Insights** - Métricas de performance (Core Web Vitals)
-
-## 🔗 Integrações Externas
-
-O site integra com:
-
-- 💬 **WhatsApp Business** - Agendamento direto via chat
-- 📸 **Instagram** - Perfil social (@draellenteixeira)
-- 📍 **Google Maps** - Localização do consultório (R. Sete de Setembro, 98 - Sala 609, Centro, RJ)
-
-## 🎯 Performance
-
-O projeto é otimizado para máxima performance:
-
-- ⚡ **Lighthouse Score**: 95+ em todas as métricas
-- 🖼️ **Imagens**: AVIF/WebP com lazy loading
-- 🎨 **CSS**: Critical CSS inlining via Critters
-- 📦 **Bundle**: Code splitting automático
-- 🔄 **Cache**: Service Worker com estratégias otimizadas
-- 🚀 **Turbopack**: Build e HMR ultra-rápidos
-
-## 📚 Documentação Adicional
-
-- **[DESENVOLVIMENTO.md](./DESENVOLVIMENTO.md)** - Guia de desenvolvimento e troubleshooting
-- **[CLAUDE.md](./CLAUDE.md)** - Instruções para Claude Code (AI assistant)
-
-## 🤝 Contribuindo
-
-Para contribuir com o projeto:
-
-1. Leia o guia [`DESENVOLVIMENTO.md`](./DESENVOLVIMENTO.md)
-2. Crie uma branch para sua feature: `git checkout -b feature/nova-funcionalidade`
-3. Commit suas mudanças: `git commit -m 'feat: adiciona nova funcionalidade'`
-4. Push para a branch: `git push origin feature/nova-funcionalidade`
-5. Abra um Pull Request
-
-## 📝 Licença
-
-© 2025 Dra. Ellen Teixeira. Todos os direitos reservados.
+© 2026 Dra. Ellen Teixeira. Todos os direitos reservados.
 
 ---
 
 <div align="center">
 
-Desenvolvido com ❤️ usando [Next.js](https://nextjs.org)
-
-**[Site](https://ellenteixeira.com.br)** • **[Instagram](https://instagram.com/draellenteixeira)** • **[WhatsApp](https://wa.me/5521974924374)**
-
+**[Site](https://ellen-teixeira.vercel.app)** • **[Instagram](https://instagram.com/draellenteixeira)** • **[WhatsApp](https://wa.me/5521974924374)**
 
 </div>

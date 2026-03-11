@@ -56,12 +56,6 @@ describe("Page (rota /)", () => {
     expect(instagramLink).toHaveAttribute("rel", "noopener noreferrer");
   });
 
-  it("o link de localização abre em nova aba com rel correto", () => {
-    const mapsLink = screen.getByRole("link", { name: /localiza/i });
-    expect(mapsLink).toHaveAttribute("target", "_blank");
-    expect(mapsLink).toHaveAttribute("rel", "noopener noreferrer");
-  });
-
   it("exibe o endereço line1 do contactConfig", () => {
     expect(screen.getByText(contactConfig.address.line1)).toBeInTheDocument();
   });
