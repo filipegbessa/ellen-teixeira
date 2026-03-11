@@ -31,10 +31,7 @@ jest.mock("@/utils/analytics", () => ({
 jest.mock("@/components/WhatsAppButton", () => ({
   __esModule: true,
   default: ({ source }: { source: string }) => (
-    <a
-      href={`https://wa.me/test`}
-      data-testid={`whatsapp-button-${source}`}
-    >
+    <a href={`https://wa.me/test`} data-testid={`whatsapp-button-${source}`}>
       WhatsApp
     </a>
   ),
@@ -47,12 +44,10 @@ describe("Page (rota /)", () => {
 
   it("renderiza o link do Instagram com href correto do contactConfig", () => {
     const instagramLink = screen.getByRole("link", { name: /instagram/i });
-    expect(instagramLink).toHaveAttribute("href", contactConfig.social.instagram);
-  });
-
-  it("renderiza o link de localização com href correto do contactConfig", () => {
-    const mapsLink = screen.getByRole("link", { name: /localiza/i });
-    expect(mapsLink).toHaveAttribute("href", contactConfig.address.mapsUrl);
+    expect(instagramLink).toHaveAttribute(
+      "href",
+      contactConfig.social.instagram
+    );
   });
 
   it("o link do Instagram abre em nova aba com rel correto", () => {

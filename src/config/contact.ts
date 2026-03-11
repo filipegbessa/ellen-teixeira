@@ -28,7 +28,7 @@ export const contactConfig = {
     line1: businessInfo.address.formatted.line1,
     line2: businessInfo.address.formatted.line2,
     full: businessInfo.address.formatted.full,
-    mapsUrl: businessInfo.address.mapsUrl,
+    mapsEmbedUrl: businessInfo.address.mapsEmbedUrl,
   },
   businessHours: {
     days: businessInfo.businessHours.weekdays.days,

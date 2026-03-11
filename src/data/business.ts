@@ -55,8 +55,8 @@ export const businessInfo = {
   // Informações de Contato
   contact: {
     phone: {
-      number: "5521981035557",
-      display: "(21) 98103-5557",
+      number: "5521974924374",
+      display: "(21) 97492-4374",
       whatsappMessage: "Olá! Gostaria de marcar uma avaliação",
     },
     email: "draellenteixeira@email.com", // TODO: Atualizar com email real
@@ -74,29 +74,28 @@ export const businessInfo = {
 
   // Endereço
   address: {
-    street: "R. Sete de Setembro, 98",
-    complement: "Sala 609",
-    neighborhood: "Centro",
+    street: "R. México, 41",
+    complement: "Sala 607",
+    neighborhood: "Cinelândia",
     city: "Rio de Janeiro",
     state: "RJ",
     stateCode: "RJ",
-    zipCode: "20050-006",
+    zipCode: "20031-144",
     country: "Brasil",
     countryCode: "BR",
     // Coordenadas para Google Maps
     coordinates: {
-      latitude: -22.906847879238773,
-      longitude: -43.17845892461447,
+      latitude: -22.9112649,
+      longitude: -43.1744826,
     },
     // String formatada
     formatted: {
-      line1: "R. Sete de Setembro, 98 - Sala 609",
-      line2: "Centro, Rio de Janeiro - RJ",
-      full: "R. Sete de Setembro, 98 - Sala 609, Centro, Rio de Janeiro - RJ, 20050-006",
+      line1: "R. México, 41 - Sala 607",
+      line2: "Cinelândia, Rio de Janeiro - RJ",
+      full: "R. México, 41 - Sala 607, Cinelândia, Rio de Janeiro - RJ",
     },
-    // Link direto para o Google Maps
-    mapsUrl:
-      "https://www.google.com/maps/place/R.+Sete+de+Setembro,+98+-+Centro,+Rio+de+Janeiro+-+RJ,+20050-002/@-22.9053433,-43.1834055,17z",
+    mapsEmbedUrl:
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.057093470328!2d-43.1744826!3d-22.9112649!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x99817750194bc7%3A0x9e56d6a4dbc458f8!2sDra.%20Ellen%20Teixeira!5e0!3m2!1spt-BR!2sbr!4v1773250900328!5m2!1spt-BR!2sbr",
   },
 
   // Horário de Funcionamento
@@ -120,46 +119,6 @@ export const businessInfo = {
       },
     ],
   },
-
-  // Avaliações dos Pacientes
-  // TODO: Substituir por avaliações reais do Google após criar perfil
-  reviews: [
-    {
-      id: 1,
-      author: "Maria S.",
-      rating: 5,
-      comment: "Excelente profissional! Muito atenciosa e cuidadosa. Fiz um implante e o resultado ficou perfeito.",
-      date: "2024-12-10",
-    },
-    {
-      id: 2,
-      author: "João P.",
-      rating: 5,
-      comment: "Atendimento humanizado e de qualidade. A Dra. Ellen explica tudo com detalhes e deixa o paciente muito tranquilo.",
-      date: "2024-11-28",
-    },
-    {
-      id: 3,
-      author: "Ana C.",
-      rating: 5,
-      comment: "Consultório moderno, equipe atenciosa. Recomendo!",
-      date: "2024-11-15",
-    },
-    {
-      id: 4,
-      author: "Carlos M.",
-      rating: 5,
-      comment: "Profissional dedicada e competente. Fez minha prótese com muito capricho.",
-      date: "2024-10-22",
-    },
-    {
-      id: 5,
-      author: "Fernanda L.",
-      rating: 4,
-      comment: "Ótimo atendimento, local de fácil acesso no Centro do Rio.",
-      date: "2024-10-08",
-    },
-  ],
 
   // Estatísticas
   stats: {

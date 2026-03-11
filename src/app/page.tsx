@@ -71,27 +71,6 @@ export default function Home() {
                   </div>
                 </a>
               </li>
-              <li>
-                <a
-                  href={contactConfig.address.mapsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block"
-                >
-                  <div className="bg-surface-elevated rounded-full pt-0.5 pr-1.5 pb-1 pl-0.5">
-                    <div className="bg-rose rounded-full h-16 flex items-center justify-center gap-2 transition-transform ">
-                      <FaMapMarkedAlt className="text-button-primary text-xl" />
-
-                      <SFTypography
-                        weight="light"
-                        className="text-button-primary"
-                      >
-                        Localização
-                      </SFTypography>
-                    </div>
-                  </div>
-                </a>
-              </li>
             </ul>
 
             <div className="mt-5 px-5">

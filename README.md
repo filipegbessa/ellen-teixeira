@@ -248,6 +248,7 @@ Para contribuir com o projeto:
 
 Desenvolvido com ❤️ usando [Next.js](https://nextjs.org)
 
-**[Site](https://ellenteixeira.com.br)** • **[Instagram](https://instagram.com/draellenteixeira)** • **[WhatsApp](https://wa.me/5521981035557)**
+**[Site](https://ellenteixeira.com.br)** • **[Instagram](https://instagram.com/draellenteixeira)** • **[WhatsApp](https://wa.me/5521974924374)**
+
 
 </div>

@@ -1,27 +1,9 @@
-"use client";
-
-import { useRef, useState } from "react";
 import Image from "next/image";
-import { getReviews } from "@/utils/Helper";
-import { Swiper, SwiperSlide } from "swiper/react";
-import type { Swiper as SwiperType } from "swiper";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { getReviews } from "@/lib/api";
+import ReviewsCarousel from "./ReviewsCarousel";
 
-export default function ReviewsSection() {
-  const reviews = getReviews();
-  const swiperRef = useRef<SwiperType>();
-  const [isBeginning, setIsBeginning] = useState(true);
-  const [isEnd, setIsEnd] = useState(false);
-
-  const updateNavigationState = (swiper: SwiperType) => {
-    if (swiper.params.loop) {
-      setIsBeginning(false);
-      setIsEnd(false);
-    } else {
-      setIsBeginning(swiper.isBeginning);
-      setIsEnd(swiper.isEnd);
-    }
-  };
+export default async function ReviewsSection() {
+  const reviews = await getReviews();
 
   return (
     <section
@@ -59,86 +41,15 @@ export default function ReviewsSection() {
             </div>
           </div>
 
-          <div className="overflow-hidden min-w-0">
-            <Swiper
-              onSwiper={(swiper) => {
-                swiperRef.current = swiper;
-                updateNavigationState(swiper);
-              }}
-              onSlideChange={(swiper) => {
-                updateNavigationState(swiper);
-              }}
-              spaceBetween={24}
-              speed={400}
-              grabCursor={true}
-              watchSlidesProgress={true}
-              slidesPerGroup={1}
-              breakpoints={{
-                320: {
-                  slidesPerView: 1,
-                  spaceBetween: 16,
-                },
-                768: {
-                  slidesPerView: 1,
-                  spaceBetween: 20,
-                },
-                1024: {
-                  slidesPerView: 2,
-                  spaceBetween: 24,
-                },
-                1280: {
-                  slidesPerView: 2,
-                  spaceBetween: 24,
-                },
-              }}
-              className="reviews-swiper"
-            >
-              {reviews.map((review) => (
-                <SwiperSlide key={review.id}>
-                  <div className="bg-review-card rounded-2xl h-48 flex flex-col items-center justify-center p-6">
-                    <div className="flex mb-2">
-                      {[...Array(review.rating)].map((_, i) => (
-                        <span key={i} className="text-rating-star text-xl">
-                          ★
-                        </span>
-                      ))}
-                    </div>
-                    <p className="text-sm text-center">
-                      {review.comment || "Comentário em breve"}
-                    </p>
-                    <p className="text-text-muted text-xs mt-2">
-                      - {review.author}
-                    </p>
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-
-            {/* Custom Navigation Buttons */}
-            <div className="flex mt-2 gap-1">
-              <button
-                onClick={() => swiperRef.current?.slidePrev()}
-                disabled={isBeginning}
-                className={`w-11 h-11 rounded-full flex items-center justify-center shadow-lg border border-primary transition-opacity ${
-                  isBeginning ? "opacity-60 cursor-not-allowed" : "opacity-100"
-                }`}
-                aria-label="Avaliação anterior"
-              >
-                <FaChevronLeft className="text-primary text-xl" />
-              </button>
-
-              <button
-                onClick={() => swiperRef.current?.slideNext()}
-                disabled={isEnd}
-                className={`w-11 h-11 rounded-full flex items-center justify-center shadow-lg border border-primary transition-opacity ${
-                  isEnd ? "opacity-60 cursor-not-allowed" : "opacity-100"
-                }`}
-                aria-label="Próxima avaliação"
-              >
-                <FaChevronRight className="text-primary text-xl" />
-              </button>
+          {reviews.length > 0 ? (
+            <ReviewsCarousel reviews={reviews} />
+          ) : (
+            <div className="flex items-center justify-center">
+              <p className="text-text-muted text-lg">
+                Avaliações em breve.
+              </p>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </section>
