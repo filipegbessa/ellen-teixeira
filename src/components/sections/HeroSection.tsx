@@ -1,5 +1,3 @@
-"use client";
-
 import { businessInfo } from "@/data/business";
 import Image from "next/image";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -47,11 +45,12 @@ export default function HeroSection() {
           {/* Right Image */}
           <div className="relative">
             <Image
-              src={"/images/hero.png"}
-              alt="Foto da Dra. Ellen Teixeira"
+              src={"/images/hero.webp"}
+              alt="Dra. Ellen Teixeira, dentista especialista em implantes e prótese no Centro do Rio de Janeiro"
               width={300}
               height={400}
               priority
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="w-full h-full object-cover"
             />
           </div>

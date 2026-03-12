@@ -179,12 +179,42 @@ As avaliações dos pacientes são buscadas da API backend (NestJS + PostgreSQL)
 
 ## Deploy
 
-O projeto está hospedado na **Vercel**: [ellen-teixeira.vercel.app](https://ellen-teixeira.vercel.app)
+O projeto está hospedado na **Vercel**: [ellen-teixeira.vercel.app](https://draellenteixeira.com.br)
 
 Para um novo deploy:
 1. Conecte o repositório na Vercel
 2. Configure as variáveis de ambiente no painel
 3. O deploy é automático a cada push na branch `main`
+
+## Otimização de Imagens
+
+As imagens do projeto devem ser comprimidas antes de serem adicionadas ao repositório. Arquivos PNG sem compressão impactam diretamente o **LCP (Largest Contentful Paint)**, a principal métrica de performance do Google.
+
+### Processo obrigatório ao adicionar ou substituir imagens
+
+1. Acesse **[squoosh.app](https://squoosh.app)** (gratuito, roda no browser, sem instalação)
+2. Arraste a imagem para a ferramenta
+3. No painel direito, selecione o formato **WebP**
+4. Ajuste a qualidade para **80–85** (equilíbrio entre visual e tamanho)
+5. Verifique o preview — o resultado deve ser visualmente idêntico ao original
+6. Clique em **Download** e salve na pasta `public/images/`
+
+### Referência de tamanhos esperados
+
+| Imagem | Uso | Tamanho máximo recomendado |
+|--------|-----|---------------------------|
+| `hero.png` | Foto principal (Hero) | 300 KB |
+| `ellen-teixeira.png` | Foto da seção Sobre | 300 KB |
+| `og-image.png` | Compartilhamento em redes sociais | 200 KB |
+| `logo.png` | Logotipo no header | 50 KB |
+
+> **Atenção:** A OG image (`og-image.png`) deve permanecer em **PNG ou JPG** (não WebP) para garantir compatibilidade com WhatsApp e outras plataformas de compartilhamento que ainda não suportam WebP em previews.
+
+### Por que isso importa
+
+O Next.js converte imagens para AVIF/WebP automaticamente na entrega, mas o arquivo original ainda é processado no servidor a cada requisição. Imagens menores reduzem o tempo de processamento, economizam banda e melhoram o score no Google PageSpeed Insights.
+
+---
 
 ## Troubleshooting
 
@@ -205,6 +235,6 @@ npm run dev:turbo
 
 <div align="center">
 
-**[Site](https://ellen-teixeira.vercel.app)** • **[Instagram](https://instagram.com/draellenteixeira)** • **[WhatsApp](https://wa.me/5521974924374)**
+**[Site](https://draellenteixeira.com.br)** • **[Instagram](https://instagram.com/draellenteixeira)** • **[WhatsApp](https://wa.me/5521974924374)**
 
 </div>

@@ -1,5 +1,3 @@
-"use client";
-
 import { businessInfo } from "@/data/business";
 import Image from "next/image";
 
@@ -43,10 +41,11 @@ export default function AboutSection() {
 
             <div className="bg-placeholder h-full rounded-[20px] overflow-hidden">
               <Image
-                src="/images/ellen-teixeira.png"
-                alt="Foto da Dra. Ellen Teixeira"
+                src="/images/ellen-teixeira.webp"
+                alt="Dra. Ellen Teixeira, especialista em prótese dentária e implantodontia - CRO-RJ 41617"
                 width={300}
                 height={400}
+                sizes="(max-width: 768px) 50vw, 305px"
                 className="w-full h-full object-cover"
               />
             </div>

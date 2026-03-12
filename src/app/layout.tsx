@@ -26,15 +26,20 @@ export const metadata: Metadata = {
   description:
     "Dra. Ellen Teixeira - Especialista em prótese e implantodontia. Atendimento odontológico personalizado e humanizado no Centro do Rio de Janeiro.",
   keywords: [
-    "odontologia",
-    "dentista",
+    "dentista Rio de Janeiro",
+    "dentista Centro RJ",
+    "odontologia Rio de Janeiro",
     "Ellen Teixeira",
-    "estética dental",
-    "implantes",
-    "ortodontia",
-    "prótese dentária",
-    "implantodontia",
-    "Centro RJ",
+    "Dra. Ellen Teixeira",
+    "implante dentário Rio de Janeiro",
+    "implantodontia RJ",
+    "prótese dentária Rio de Janeiro",
+    "estética dental Rio de Janeiro",
+    "clareamento dental Centro RJ",
+    "ortodontia Rio de Janeiro",
+    "harmonização orofacial RJ",
+    "dentista Cinelândia",
+    "consultório odontológico Centro Rio",
   ],
   authors: [{ name: "Ellen Teixeira" }],
   creator: "Ellen Teixeira",
@@ -48,7 +53,7 @@ export const metadata: Metadata = {
     siteName: "Dra. Ellen Teixeira - Odontologia",
     images: [
       {
-        url: "/images/og-image.png", // Adicione esta imagem depois
+        url: "/images/og-image.png",
         width: 1200,
         height: 630,
         alt: "Ellen Teixeira - Odontologia",
@@ -74,8 +79,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    // google: 'seu-codigo-google-search-console',
-    // yandex: 'seu-codigo-yandex',
+    google: "qh7orDtUTgRIgsSwQRIDy30cZ2AE-QPLwXoJnMf8S24",
   },
 };
 

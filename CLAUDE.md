@@ -225,7 +225,7 @@ Eventos customizados em `src/utils/analytics.ts`:
 
 > *Se não configurado, a seção de avaliações exibe estado vazio.
 
-**Produção:** `https://ellen-teixeira.vercel.app`
+**Produção:** `https://draellenteixeira.com.br`
 **API backend:** `https://ellen-api-dun.vercel.app`
 
 ## Status do Projeto

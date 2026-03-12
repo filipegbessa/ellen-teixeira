@@ -1,3 +1,5 @@
+"use client";
+
 import { FaWhatsapp } from "react-icons/fa";
 import { contactConfig } from "@/config/contact";
 import { trackWhatsAppClick } from "@/utils/analytics";
