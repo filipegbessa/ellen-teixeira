@@ -45,12 +45,10 @@ export default function TreatmentsSection() {
               Tratamentos
             </h2>
             <p className="leading-relaxed text-secondary">
-              Ofereço uma ampla gama de tratamentos odontológicos personalizados
-              para atender às suas necessidades específicas. Com anos de
-              experiência e formação especializada, estou comprometida em
-              proporcionar os melhores cuidados, utilizando as mais recentes
-              tecnologias e técnicas avançadas para garantir sua saúde bucal e
-              estética.
+              Com especialização em Ortodontia e atendimento completo de clínica
+              geral, ofereço tratamentos para cada fase da sua saúde bucal. Do
+              alinhamento dos dentes ao cuidado preventivo do dia a dia — tudo
+              em um único consultório, com o mesmo cuidado e atenção.
             </p>
           </div>
 

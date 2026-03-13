@@ -1,18 +1,19 @@
 import { businessInfo } from "@/data/business";
+import { getReviewsSummary } from "@/lib/api";
 
 /**
  * Structured data (Schema.org) for SEO
  * Provides rich snippets for search engines
  */
-export default function StructuredData() {
+export default async function StructuredData() {
+  const summary = await getReviewsSummary();
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Dentist",
     name: businessInfo.professional.name,
     image: `${process.env.NEXT_PUBLIC_SITE_URL}/images/ellen-teixeira.webp`,
     description:
-      businessInfo.professional.title +
-      ". Atendimento odontológico personalizado e humanizado no Rio de Janeiro.",
+      "Especialista em Ortodontia e Clínica Geral no Centro do Rio de Janeiro. Atendimento odontológico completo e humanizado: ortodontia, clínica geral, estética dental, implantes e mais.",
     address: {
       "@type": "PostalAddress",
       streetAddress:
@@ -42,6 +43,10 @@ export default function StructuredData() {
         closes: hours.closes,
       })
     ),
+    areaServed: {
+      "@type": "City",
+      name: "Rio de Janeiro",
+    },
     sameAs: [businessInfo.contact.social.instagram.url],
     medicalSpecialty: businessInfo.specialties,
     hasCredential: {
@@ -54,8 +59,16 @@ export default function StructuredData() {
     },
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: String(businessInfo.stats.averageRating),
-      reviewCount: String(businessInfo.stats.totalReviews),
+      ratingValue: String(
+        summary.totalReviews > 0
+          ? summary.averageRating
+          : businessInfo.stats.averageRating
+      ),
+      reviewCount: String(
+        summary.totalReviews > 0
+          ? summary.totalReviews
+          : businessInfo.stats.totalReviews
+      ),
       bestRating: "5",
       worstRating: "1",
     },
@@ -70,7 +83,7 @@ export default function StructuredData() {
         name: "Quais tratamentos a Dra. Ellen Teixeira realiza?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "A Dra. Ellen Teixeira realiza implantodontia, prótese dentária, ortodontia, estética dental, clareamento dental e harmonização orofacial no Centro do Rio de Janeiro.",
+          text: "A Dra. Ellen Teixeira é especialista em Ortodontia e atende também clínica geral, estética dental, clareamento dental, implantodontia, prótese dentária e harmonização orofacial no Centro do Rio de Janeiro.",
         },
       },
       {
@@ -110,7 +123,7 @@ export default function StructuredData() {
         name: "Qual a formação da Dra. Ellen Teixeira?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "A Dra. Ellen Teixeira é graduada em Odontologia pela UFF, com especialização em Ortodontia pela PUC-Rio e Mestrado em Odontologia pela UFF. Possui CRO-RJ 41617 e mais de 13 anos de experiência.",
+          text: "A Dra. Ellen Teixeira é graduada em Odontologia pela UFF, com Especialização em Ortodontia pela PUC-Rio e Mestrado em Odontologia pela UFF. É especialista registrada em Ortodontia com CRO-RJ 41617 e mais de 13 anos de experiência clínica.",
         },
       },
     ],

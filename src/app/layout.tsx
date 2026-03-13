@@ -20,25 +20,25 @@ export const metadata: Metadata = {
     process.env.NEXT_PUBLIC_SITE_URL || "https://draellenteixeira.com.br"
   ),
   title: {
-    default: "Dra. Ellen Teixeira - Odontologia",
-    template: "%s | Ellen Teixeira",
+    default: "Dra. Ellen Teixeira - Ortodontia e Clínica Geral",
+    template: "%s | Dra. Ellen Teixeira",
   },
   description:
-    "Dra. Ellen Teixeira - Especialista em prótese e implantodontia. Atendimento odontológico personalizado e humanizado no Centro do Rio de Janeiro.",
+    "Dra. Ellen Teixeira - Especialista em Ortodontia no Centro do Rio de Janeiro. Atendimento completo: ortodontia, clínica geral, estética dental, implantes e mais. Cuidado humanizado e personalizado.",
   keywords: [
+    "ortodontia Rio de Janeiro",
+    "ortodontia Centro RJ",
+    "especialista em ortodontia Rio de Janeiro",
+    "aparelho ortodôntico Rio de Janeiro",
+    "alinhadores invisíveis Rio de Janeiro",
+    "clínica geral odontológica Rio de Janeiro",
     "dentista Rio de Janeiro",
     "dentista Centro RJ",
-    "odontologia Rio de Janeiro",
-    "Ellen Teixeira",
+    "dentista Cinelândia",
     "Dra. Ellen Teixeira",
-    "implante dentário Rio de Janeiro",
-    "implantodontia RJ",
-    "prótese dentária Rio de Janeiro",
     "estética dental Rio de Janeiro",
     "clareamento dental Centro RJ",
-    "ortodontia Rio de Janeiro",
-    "harmonização orofacial RJ",
-    "dentista Cinelândia",
+    "implante dentário Rio de Janeiro",
     "consultório odontológico Centro Rio",
   ],
   authors: [{ name: "Ellen Teixeira" }],
@@ -47,24 +47,24 @@ export const metadata: Metadata = {
     type: "website",
     locale: "pt_BR",
     url: "/",
-    title: "Dra. Ellen Teixeira - Odontologia",
+    title: "Dra. Ellen Teixeira - Ortodontia e Clínica Geral",
     description:
-      "Especialista em prótese e implantodontia. Atendimento personalizado e humanizado no Centro do Rio de Janeiro.",
-    siteName: "Dra. Ellen Teixeira - Odontologia",
+      "Especialista em Ortodontia no Centro do Rio de Janeiro. Atendimento completo e humanizado: ortodontia, clínica geral, estética dental e muito mais.",
+    siteName: "Dra. Ellen Teixeira - Ortodontia e Clínica Geral",
     images: [
       {
         url: "/images/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Ellen Teixeira - Odontologia",
+        alt: "Dra. Ellen Teixeira - Especialista em Ortodontia e Clínica Geral no Centro do Rio de Janeiro",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dra. Ellen Teixeira - Odontologia",
+    title: "Dra. Ellen Teixeira - Ortodontia e Clínica Geral",
     description:
-      "Especialista em prótese e implantodontia. Atendimento personalizado e humanizado.",
+      "Especialista em Ortodontia no Centro do Rio de Janeiro. Ortodontia, clínica geral e estética dental com atendimento humanizado.",
     images: ["/images/og-image.png"],
   },
   robots: {
@@ -77,6 +77,9 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
+  },
+  alternates: {
+    canonical: "https://draellenteixeira.com.br",
   },
   verification: {
     google: "qh7orDtUTgRIgsSwQRIDy30cZ2AE-QPLwXoJnMf8S24",

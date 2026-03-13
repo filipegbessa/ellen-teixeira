@@ -3,5 +3,13 @@
     "deploymentEnabled": {
       "main": true
     }
-  }
+  },
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.draellenteixeira.com.br" }],
+      "destination": "https://draellenteixeira.com.br/:path*",
+      "permanent": true
+    }
+  ]
 }

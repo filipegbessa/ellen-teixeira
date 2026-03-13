@@ -30,11 +30,9 @@ export default function AboutSection() {
               <div className="bg-secondary rounded-[20px]  flex flex-col justify-center p-4 gap-1 md:aspect-square">
                 <p className="font-semibold text-base">Formação:</p>
                 <p className=" text-sm">
-                  Odontologia pela
-                  <br />
-                  Universidade Federal
-                  <br />
-                  do Rio de Janeiro
+                  {businessInfo.qualifications.find((q) => q.isMain)?.title}{" "}
+                  pela{" "}
+                  {businessInfo.qualifications.find((q) => q.isMain)?.place}
                 </p>
               </div>
             </div>

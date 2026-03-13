@@ -56,10 +56,10 @@ export const businessInfo = {
   // Informações da Profissional
   professional: {
     name: "Dra. Ellen Teixeira",
-    title: "Especialista em Prótese e Implantodontia",
+    title: "Especialista em Ortodontia e Clínica Geral",
     cro: "41617",
     experienceYears,
-    bio: "Com um compromisso inabalável com a excelência e o cuidado ao paciente, sou uma profissional dedicada e apaixonada pela Odontologia, trazendo mais de 12 anos de experiência na transformação de sorrisos e vidas. Meu foco é oferecer tratamentos de alta qualidade com atenção humanizada.",
+    bio: "Especialista em Ortodontia pela PUC-Rio e Mestre em Odontologia pela UFF, atuo há mais de 13 anos transformando sorrisos com cuidado técnico e atenção humanizada. Minha prática combina a precisão da ortodontia com a visão ampla da clínica geral — porque um sorriso saudável começa por dentro. Cada tratamento é planejado de forma individualizada, respeitando o tempo e as necessidades de cada paciente.",
   },
 
   // Formação e Qualificações
@@ -67,11 +67,12 @@ export const businessInfo = {
 
   // Especialidades Oferecidas
   specialties: [
-    "Implantodontia",
-    "Prótese Dentária",
     "Ortodontia",
+    "Clínica Geral",
     "Estética Dental",
     "Clareamento Dental",
+    "Implantodontia",
+    "Prótese Dentária",
     "Harmonização Orofacial",
   ],
 
