@@ -19,7 +19,7 @@ adminApi.interceptors.response.use(
   (error) => {
     if (typeof window !== 'undefined') {
       if (error.response?.status === 401) {
-        Cookies.remove('admin_token');
+        sessionStorage.removeItem('admin_token');
         window.location.href = '/admin/login';
       } else if (error.response?.status === 403) {
         window.location.href = '/admin/acesso-negado';
