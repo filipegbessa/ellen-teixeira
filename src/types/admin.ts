@@ -7,7 +7,7 @@ export interface LoginResponse {
 }
 
 export interface JwtPayload {
-  sub: number;
+  sub: string;
   email: string;
   role: Role;
   iat: number;
@@ -15,7 +15,7 @@ export interface JwtPayload {
 }
 
 export interface User {
-  id: number;
+  id: string;
   name: string;
   email: string;
   role: Role;
@@ -24,7 +24,7 @@ export interface User {
 }
 
 export interface Patient {
-  id: number;
+  id: string;
   name: string;
   cpf: string;
   createdAt: string;
@@ -32,8 +32,8 @@ export interface Patient {
 }
 
 export interface Media {
-  id: number;
-  patientId: number;
+  id: string;
+  patientId: string;
   code: string;
   title: string;
   description: string | null;
@@ -46,14 +46,14 @@ export interface Media {
 }
 
 export interface Transaction {
-  id: number;
+  id: string;
   type: TransactionType;
   date: string;
   amount: number;
   paymentType: PaymentType;
   invoiceIssued: boolean;
   notes: string | null;
-  patientId: number | null;
+  patientId: string | null;
   patient: Pick<Patient, 'id' | 'name'> | null;
   procedure: string | null;
   paidTo: string | null;

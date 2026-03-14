@@ -66,10 +66,11 @@ export default function TestPage() {
         <div style={{ marginBottom: 8 }}>
           <label>ID do Paciente</label><br />
           <input
-            type="number"
+            type="text"
             value={patientId}
             onChange={(e) => setPatientId(e.target.value)}
             required
+            placeholder="UUID do paciente"
             style={{ width: '100%' }}
           />
         </div>
