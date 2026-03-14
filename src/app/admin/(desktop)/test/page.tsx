@@ -1,19 +1,34 @@
 'use client';
 
-import { useState, FormEvent } from 'react';
-import { useAdmin } from '@/providers/AdminProvider';
+import { useState, useEffect, FormEvent } from 'react';
 import adminApi from '@/lib/admin-api';
 import { parseApiError } from '@/utils/parse-api-error';
 import type { Media } from '@/types/admin';
 
+function decodeTokenPayload(token: string) {
+  try {
+    return JSON.parse(atob(token.split('.')[1]));
+  } catch {
+    return null;
+  }
+}
+
 export default function TestPage() {
-  const { email, role } = useAdmin();
+  const [identity, setIdentity] = useState({ email: '', role: '' });
   const [patientId, setPatientId] = useState('');
   const [title, setTitle] = useState('');
   const [file, setFile] = useState<File | null>(null);
   const [result, setResult] = useState<Media | null>(null);
   const [errors, setErrors] = useState<string[]>([]);
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const token = sessionStorage.getItem('admin_token');
+    if (token) {
+      const payload = decodeTokenPayload(token);
+      if (payload) setIdentity({ email: payload.email ?? '', role: payload.role ?? '' });
+    }
+  }, []);
 
   async function handleUpload(e: FormEvent) {
     e.preventDefault();
@@ -44,7 +59,7 @@ export default function TestPage() {
   return (
     <div style={{ padding: 24, maxWidth: 600 }}>
       <h1>Página de Teste — Admin</h1>
-      <p>Logado como: <strong>{email}</strong> | role: <strong>{role}</strong></p>
+      <p>Logado como: <strong>{identity.email || '—'}</strong> | role: <strong>{identity.role || '—'}</strong></p>
       <hr />
       <h2>Upload de Mídia</h2>
       <form onSubmit={handleUpload}>
