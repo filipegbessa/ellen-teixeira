@@ -6,7 +6,7 @@ import { Role } from '@/types/admin';
 interface AdminContextValue {
   role: Role;
   email: string;
-  userId: number;
+  userId: string;
 }
 
 const AdminContext = createContext<AdminContextValue | null>(null);
